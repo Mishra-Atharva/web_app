@@ -21,6 +21,7 @@ When connecting to the database with db.connect(`dbname`, `user`, `pass`)
 - For simplicity it is reccommended to use `Intellij IDEA`
 - Open the Backend folder
 - run the `BackendApplication.java` file
+- `BackendApplication.java` is Located in `src` -> `main` -> `java` -> `com.rushlance.backend`
 
 ## API
 When testing the API use [`PostMan`](https://www.postman.com/)

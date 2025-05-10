@@ -4,6 +4,14 @@
 
 ---
 
+## Running the project
+Make sure you have maven download on your device check by running `mvn -v` in the terminal
+
+- Go to `./rushlance/frontend/` 
+- run `npm run dev`
+- Go to `./rushlance/`
+- run the `controller.py` file 
+
 ## Setup
 
 ### Connecting to the database

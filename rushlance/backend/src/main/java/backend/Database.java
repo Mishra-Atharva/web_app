@@ -200,6 +200,7 @@ public class Database
         }
     }
 
+    // Get all users
     public ArrayList<Map<String, Object>> getUsers(Connection conn)
     {
         ArrayList<Map<String, Object>> users = new ArrayList<Map<String, Object>>();
@@ -235,6 +236,32 @@ public class Database
 
         return users;
     }
+
+    //Get specific user
+    public Map<String, Object> getUsers(Connection conn, String email)
+    {
+        Map<String, Object> user = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        try
+        {
+            String query = "SELECT * FROM USERS WHERE email = '" + email + "'";
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(query);
+
+            user = new HashMap<>();
+            user.put("email", rs.getString("email"));
+            user.put("password", rs.getString("password"));
+        }
+        catch (SQLException e)
+        {
+            System.out.println(e);
+        }
+
+        return user;
+    }
+
 
     public ArrayList<Map<String, Object>> getAddress(Connection conn)
     {

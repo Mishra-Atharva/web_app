@@ -2,6 +2,7 @@ package com.rushlance.backend;
 
 import backend.Database;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Connection;
@@ -48,4 +49,7 @@ public class Controller {
     {
         return this.db.getAddress(this.conn);
     }
+
+    @PostMapping("/POST:LOGIN")
+    public 
 }

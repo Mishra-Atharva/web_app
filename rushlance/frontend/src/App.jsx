@@ -1,7 +1,6 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/general/Home';
-import Signup from './pages/general/signup';
-import Login from './pages/general/login';
+import Signup from './pages/login/signup';
 import Subscription from './pages/general/subscription';
 import DashboardAdmin from './pages/admin/dashboard';
 import DashboardFreelancer from './pages/freelancer/dashboard';
@@ -14,8 +13,8 @@ export default function App() {
       <div>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup/>} />
+            <Route path="/login" element={<Signup/>} />
             <Route path="/subscription" element={<Subscription />} />
             <Route path="/dashboard_freelancer" element={<DashboardFreelancer />} />
             <Route path="/dashboard_client" element={<DashboardClient />} />

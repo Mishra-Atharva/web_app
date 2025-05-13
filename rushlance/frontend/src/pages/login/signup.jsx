@@ -1,5 +1,5 @@
-import LeftView from "./components/signup_components/leftview";
-import RightView from "./components/signup_components/rightview";
+import Form from "./components/signup_components/Form";
+import Display from "./components/signup_components/Display";
 import SignImage from "./assets/sign.svg";
 import LoginImage from "./assets/logo.svg";
 import Background from "./assets/image.jpg";
@@ -16,8 +16,8 @@ function Signup()
     return (
         <div style={{backgroundImage: `url(${Background})`, backgroundSize: 'cover', backgroundRepeat: 'repeat'}} className="flex flex-col items-center justify-center w-[100vw] h-[100vh]">
             <div style={shadow} className="h-[70vh] w-[70%] p-0 font-['poppins'] font-semibold rounded-2xl flex flex-row bg-white">
-                <LeftView title={(choice) ? "Sign Up" : "Welcome Back!"} signup={{choice, setChoice}}/>
-                <RightView image={(choice) ? SignImage : LoginImage} signup={choice}/>
+                <Form title={(choice) ? "Sign Up" : "Welcome Back!"} signup={{choice, setChoice}}/>
+                <Display image={(choice) ? SignImage : LoginImage} signup={choice}/>
             </div>
         </div>
     );

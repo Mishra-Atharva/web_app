@@ -1,12 +1,15 @@
 package com.rushlance.backend.controller;
 
 import backend.Database;
+import com.rushlance.backend.model.*;
+import com.rushlance.backend.repo.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -15,38 +18,50 @@ public class MainController {
     private Database db;
     private Connection conn;
 
-    public MainController() {
-        this.db = new Database();
-        this.conn = db.connect("postgres", "postgres", "root");
+    @Autowired
+    private ServiceRepo s_repo;
+
+    @Autowired
+    private UserRepo u_repo;
+
+    @Autowired
+    private AddressRepo a_repo;
+
+    @Autowired
+    private BookingRepo b_repo;
+
+    @Autowired
+    private ApplicationRepo app_repo;
+
+    @GetMapping("/users")
+    public List<Users> get_users()
+    {
+        return this.u_repo.getAll();
     }
 
-    @GetMapping("/GET:USERS")
-    public ArrayList<Map<String, Object>> get_users()
+    @GetMapping("/address")
+    public List<Address> get_address()
     {
-        return this.db.getUsers(this.conn);
+        return this.a_repo.getAll();
     }
 
-    @GetMapping("/GET:ADDRESSES")
-    public ArrayList<Map<String, Object>> get_address()
+    @GetMapping("/booking")
+    public List<Booking> get_active_task()
     {
-        return this.db.getAddress(this.conn);
+        return this.b_repo.getAll();
     }
 
-    @GetMapping("/GET:BOOKING")
-    public ArrayList<Map<String, Object>> get_active_task()
+    @GetMapping("/service")
+    public List<Service> showServices()
     {
-        return this.db.getBooking(this.conn);
+        return this.s_repo.findAll();
     }
 
-    @GetMapping("/GET:SERVICE")
-    public ArrayList<Map<String, Object>> get_archived_task()
+    @GetMapping("/application")
+    public List<Application> get_task_application()
     {
-        return this.db.getService(this.conn);
+        return this.app_repo.getAll();
     }
 
-    @GetMapping("/GET:APPLICATION")
-    public ArrayList<Map<String, Object>> get_task_application()
-    {
-        return this.db.getAddress(this.conn);
-    }
 }
+

@@ -1,17 +1,15 @@
 package com.rushlance.backend.repo;
 
-import com.rushlance.backend.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import com.rushlance.backend.model.Service;
 
 import java.util.List;
 
 @Repository
-public interface UserRepo extends JpaRepository<Users, Integer>
+public interface ServiceRepo extends JpaRepository<Service, Long>
 {
-    Users findByEmail(String email);
-
-    @Query(value="SELECT * FROM USERS", nativeQuery=true)
-    List<Users> getAll();
+    @Query(value = "SELECT * FROM service", nativeQuery = true)
+    List<Service> getServices();
 }

@@ -43,6 +43,11 @@ public class Users
     @JsonProperty("user_type")
     private String type;
 
+    public int getId()
+    {
+        return id;
+    }
+
     public String getFirst_name() {
         return first_name;
     }

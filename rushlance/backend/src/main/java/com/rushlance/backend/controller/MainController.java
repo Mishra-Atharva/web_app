@@ -4,15 +4,13 @@ import backend.Database;
 import com.rushlance.backend.model.*;
 import com.rushlance.backend.repo.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @RestController
+@CrossOrigin
 public class MainController {
 
     private Database db;

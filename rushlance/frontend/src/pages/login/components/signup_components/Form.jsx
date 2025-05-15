@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import Button from "./Button";
 
-function LeftView({title, signup})
+function LeftView({title, signup, details, buttonEvent})
 {
     const changeType = () => {
         if (signup.choice)
@@ -105,13 +105,13 @@ function LeftView({title, signup})
                     <div className="flex flex-col">
                         <label for="email">Email address: </label>
                         <br/>
-                        <input type="text" name="email" id="email" placeholder="johnsmith@gmail.com" onChange={(e) => setEmail(e.target.value)} required style={shadow} className="w-[350px] h-[50px] bg-white rounded-xl px-4 py-2 font-normal outline-0"/>
+                        <input type="text" name="email" id="email" placeholder="johnsmith@gmail.com" onChange={(e) => details.setEmail(e.target.value)} required style={shadow} className="w-[350px] h-[50px] bg-white rounded-xl px-4 py-2 font-normal outline-0"/>
 
                         <br/>
 
                         <label for="email">Password: </label>
                         <br/>
-                        <input type="password" name="pass" id="pass" placeholder="password" onChange={(e) => setPass(e.target.value)} required  style={shadow} className="w-[350px] h-[50px] bg-white px-4 py-2 rounded-xl font-normal outline-0"/>
+                        <input type="password" name="pass" id="pass" placeholder="password" onChange={(e) => details.setPass(e.target.value)} required  style={shadow} className="w-[350px] h-[50px] bg-white px-4 py-2 rounded-xl font-normal outline-0"/>
 
                         <br/>
                         <a href="/" className="font-semibold text-sm w-fit cursor-pointer">Forgot Password?</a>
@@ -122,7 +122,7 @@ function LeftView({title, signup})
             )}
 
             <br />
-            <Button text={(signup.choice) ? "Signup" : "Login"}/>
+            <Button onclick = {buttonEvent} text={(signup.choice) ? "Signup" : "Login"}/>
             <br />
             <br />
         </motion.div>

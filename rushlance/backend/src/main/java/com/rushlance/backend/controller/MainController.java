@@ -1,4 +1,4 @@
-package com.rushlance.backend;
+package com.rushlance.backend.controller;
 
 import backend.Database;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.Map;
 
 @RestController
-public class Controller {
+public class MainController {
 
     private Database db;
     private Connection conn;
 
-    public Controller() {
+    public MainController() {
         this.db = new Database();
         this.conn = db.connect("postgres", "postgres", "root");
     }
@@ -49,7 +49,4 @@ public class Controller {
     {
         return this.db.getAddress(this.conn);
     }
-
-    @PostMapping("/POST:LOGIN")
-    public 
 }

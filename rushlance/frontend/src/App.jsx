@@ -5,15 +5,21 @@ import Subscription from './pages/general/subscription';
 import DashboardAdmin from './pages/admin/dashboard';
 import DashboardFreelancer from './pages/freelancer/dashboard';
 import DashboardClient from './pages/client/dashboard';
+import PublicRoute from './PublicRoute';
 
 
 export default function App() {
+
   return (
     <Router>
       <div>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/signup" element={<Signup/>} />
+            <Route path="/signup" element={
+              <PublicRoute>
+                <Signup/>
+              </PublicRoute>
+            } />
             <Route path="/subscription" element={<Subscription />} />
             <Route path="/dashboard_freelancer" element={<DashboardFreelancer />} />
             <Route path="/dashboard_client" element={<DashboardClient />} />

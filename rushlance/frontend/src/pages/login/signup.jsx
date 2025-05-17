@@ -3,15 +3,17 @@ import Display from "./components/signup_components/Display";
 import SignImage from "./assets/sign.svg";
 import LoginImage from "./assets/logo.svg";
 import Background from "./assets/image.jpg";
-import React, { useState } from "react";
+import { useState } from "react";
+import { Navigate } from 'react-router-dom';
 
 function Signup()
 {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
+    const [redirect, setRedirect] = useState(false);
     
     const handleSubmit = async (e) => {
-        e.preventDefault(); // prevent page reload
+        // e.preventDefault(); // prevent page reload
 
         try 
         {
@@ -25,9 +27,10 @@ function Signup()
     
             const result = await response.text();
             if (response.ok) {
-                alert(result); // Login successful
+                localStorage.setItem("token", result);
+                setRedirect(true);
             } else {
-                alert("Login failed: " + result);
+                console.log("Error!");
             }
 
         } catch (error) {
@@ -39,6 +42,11 @@ function Signup()
       };
 
     const [choice, setChoice] = useState(true);
+
+    if (redirect)
+    {
+        return <Navigate to = "/" replcae/>
+    }
     
     const shadow = {
         boxShadow: "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",

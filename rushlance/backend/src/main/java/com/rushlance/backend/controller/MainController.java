@@ -12,10 +12,6 @@ import java.util.List;
 @RestController
 @CrossOrigin
 public class MainController {
-
-    private Database db;
-    private Connection conn;
-
     @Autowired
     private ServiceRepo s_repo;
 

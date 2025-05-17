@@ -1,10 +1,30 @@
-import { div } from "motion/react-client";
+import { button, div } from "motion/react-client";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 import Button from "./Button";
 
 function LeftView({title, signup, details, buttonEvent})
 {
+    const buttonRef = useRef();
+
+    const submit = (event) => {
+        if (event.key == 'Enter') 
+        {
+            if (!signup.choice)
+            {
+                if (details.email && details.pass)
+                {
+                    buttonRef.current.click();
+                }
+                else 
+                {
+                    alert("Feild not filled out!");
+                }
+            }
+        }
+    }
+
     const changeType = () => {
         if (signup.choice)
         {
@@ -111,7 +131,7 @@ function LeftView({title, signup, details, buttonEvent})
 
                         <label for="email">Password: </label>
                         <br/>
-                        <input type="password" name="pass" id="pass" placeholder="password" onChange={(e) => details.setPass(e.target.value)} required  style={shadow} className="w-[350px] h-[50px] bg-white px-4 py-2 rounded-xl font-normal outline-0"/>
+                        <input onKeyDown={submit} type="password" name="pass" id="pass" placeholder="password" onChange={(e) => details.setPass(e.target.value)} required  style={shadow} className="w-[350px] h-[50px] bg-white px-4 py-2 rounded-xl font-normal outline-0"/>
 
                         <br/>
                         <a href="/" className="font-semibold text-sm w-fit cursor-pointer">Forgot Password?</a>
@@ -122,7 +142,7 @@ function LeftView({title, signup, details, buttonEvent})
             )}
 
             <br />
-            <Button onclick = {buttonEvent} text={(signup.choice) ? "Signup" : "Login"}/>
+            <Button ref={buttonRef} onclick = {buttonEvent} text={(signup.choice) ? "Signup" : "Login"}/>
             <br />
             <br />
         </motion.div>

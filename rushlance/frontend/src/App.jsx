@@ -15,11 +15,13 @@ export default function App() {
       <div>
           <Routes>
             <Route path="/" element={<Home />} />
+
             <Route path="/signup" element={
               <PublicRoute>
                 <Signup/>
               </PublicRoute>
             } />
+            
             <Route path="/subscription" element={<Subscription />} />
             <Route path="/dashboard_freelancer" element={<DashboardFreelancer />} />
             <Route path="/dashboard_client" element={<DashboardClient />} />

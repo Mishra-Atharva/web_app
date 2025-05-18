@@ -15,9 +15,9 @@ function DashboardClient()
             "menu content"
             "footer footer"
         `,
-        gridTemplateRows: "auto 1fr auto",
+        gridTemplateRows: "10% 80% 10%",
         gridTemplateColumns: "1fr 6fr",
-        gap: "10px"
+        backgroundColor: "#f2f2f2",
     };
 
     return (

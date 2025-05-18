@@ -5,7 +5,7 @@ function Content({ area })
     };
 
     return (
-        <div style = { areaStyle } className="border-black border-2">
+        <div style = { areaStyle } className="rounded-2xl p-5 m-2 bg-[#ffffff]">
             <h1>Content</h1>
         </div>   
     );

@@ -5,7 +5,7 @@ function Footer( { area } )
     };
 
     return (
-        <footer style = { areaStyle } className = "border-black border-2">
+        <footer style = { areaStyle } className = "">
             <h1>Footer</h1>
         </footer>
     );

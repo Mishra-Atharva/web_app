@@ -6,7 +6,6 @@ function Footer( { area } )
 
     return (
         <footer style = { areaStyle } className = "">
-            <h1>Footer</h1>
         </footer>
     );
 }

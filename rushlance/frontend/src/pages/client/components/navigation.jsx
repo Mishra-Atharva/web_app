@@ -1,6 +1,6 @@
-import Logo from "../assets/rushlance.png"
+import DownIcon from "../assets/down_arrow.svg";
 
-function NavigationBar( { area } )
+function NavigationBar()
 {
     const style = {
         width: "100%",
@@ -26,9 +26,12 @@ function NavigationBar( { area } )
                 <li style = { linkStyle }>Account</li>
             </ul>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col p-10">
                 <div className="w-[150px] h-[35px] rounded-full border-1 border-black flex justify-center items-center shadow-[box-shadow:_rgba(100,_100,_111,_0.2)_0px_7px_29px_0px]">
-                    <p>Location</p>
+                    <div className="flex flex-row justify-center items-center">
+                        <p className="w-[80%] px-5">Location</p>
+                        <img src={DownIcon} className="w-[20%] h-[20%]"/>
+                    </div>
                 </div>
                 <div className="hidden absolute right-[1%] top-[8%] w-[350px] h-[250px] rounded-lg border-1 border-black flex justify-center items-center shadow-[box-shadow:_rgba(100,_100,_111,_0.2)_0px_7px_29px_0px]">
 

@@ -16,7 +16,7 @@ function DashboardClient()
             "footer footer"
         `,
         gridTemplateRows: "10% 80% 10%",
-        gridTemplateColumns: "1fr 6fr",
+        gridTemplateColumns: "1fr 5fr",
         backgroundColor: "#f2f2f2",
     };
 

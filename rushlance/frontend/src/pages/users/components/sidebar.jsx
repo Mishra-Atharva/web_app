@@ -1,3 +1,4 @@
+import DashboardIcon from "../assets/dashboard.svg";
 import AccountIcon from "../assets/account.svg";
 import PaymentIcon from "../assets/payment.svg";
 import BookingIcon from "../assets/booking.svg";
@@ -5,7 +6,7 @@ import SettingsIcon from "../assets/settings.svg";
 import HelpIcon from "../assets/help.svg";
 import SignOutIcon from "../assets/signout.svg";
 
-function SideBar( { area } )
+function SideBar( { currentLink } )
 {
     const areaStyle = {
         gridArea: "menu",
@@ -28,19 +29,23 @@ function SideBar( { area } )
                 <br />
 
                 <div className="w-[100%] grid">
-                    <div className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
-                        <img style={imgStyle} src={AccountIcon} alt="" />
-                        <a className="w-[100%]">Account Details</a>
-
+                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Dashboard");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
+                        <img style={imgStyle} src={DashboardIcon}/>
+                        <a className="w-[100%]">Dashboard</a>
                     </div>
 
-                    <div className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
-                        <img style={imgStyle} src={PaymentIcon} alt="" />
+                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Account");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
+                        <img style={imgStyle} src={AccountIcon}/>
+                        <a className="w-[100%]">Account Details</a>
+                    </div>
+
+                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Payment");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
+                        <img style={imgStyle} src={PaymentIcon}/>
                         <a className="w-[100%]">Payment Method</a>
                     </div>
 
-                    <div className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
-                        <img style={imgStyle} src={BookingIcon} alt="" />
+                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Bookings");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
+                        <img style={imgStyle} src={BookingIcon}/>
                         <a className="w-[100%]">Bookings</a>
                     </div>
 
@@ -55,18 +60,18 @@ function SideBar( { area } )
                 <div>
                 <div className="w-[100%] grid">
 
-                    <div className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
+                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Settings");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
                         <img style={imgStyle} src={SettingsIcon} alt="" />
                         <a className="w-[100%]">Settings</a>
 
                     </div>
 
-                    <div className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
+                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Help");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
                         <img style={imgStyle} src={HelpIcon} alt="" />
                         <a className="w-[100%]">Help</a>
                     </div>
 
-                    <div className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
+                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("SignOut");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
                         <img style={imgStyle} src={SignOutIcon} alt="" />
                         <a className="w-[100%]">Sign out</a>
                     </div>

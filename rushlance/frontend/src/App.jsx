@@ -6,6 +6,7 @@ import DashboardAdmin from './pages/users/admin/dashboard';
 import DashboardFreelancer from './pages/users/freelancer/dashboard';
 import DashboardClient from './pages/users/client/dashboard';
 import PublicRoute from './PublicRoute';
+import PrivateRoute from "./PrivateRoute";
 
 
 export default function App() {
@@ -22,10 +23,28 @@ export default function App() {
               </PublicRoute>
             } />
             
-            <Route path="/subscription" element={<Subscription />} />
-            <Route path="/dashboard_freelancer" element={<DashboardFreelancer />} />
-            <Route path="/dashboard_client" element={<DashboardClient />} />
-            <Route path="/dashboard_admin" element={<DashboardAdmin />} />
+            <Route path="/subscription" element={
+              <Subscription />
+            } />
+
+            <Route path="/dashboard_freelancer" element={
+              <PrivateRoute>
+                <DashboardFreelancer/>
+              </PrivateRoute>
+            } />
+            
+            <Route path="/dashboard_client" element={
+              <PrivateRoute>
+                <DashboardClient/>
+              </PrivateRoute>
+            } />
+
+            <Route path="/dashboard_admin" element={
+              <PrivateRoute>
+                <DashboardAdmin/>
+              </PrivateRoute>
+            } />
+
           </Routes>
       </div>
     </Router>

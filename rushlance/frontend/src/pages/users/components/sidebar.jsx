@@ -5,9 +5,19 @@ import BookingIcon from "../assets/booking.svg";
 import SettingsIcon from "../assets/settings.svg";
 import HelpIcon from "../assets/help.svg";
 import SignOutIcon from "../assets/signout.svg";
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 function SideBar( { currentLink } )
 {
+
+    const [redirect, setRedirect] = useState(false);
+    if (redirect)
+    {
+        localStorage.clear();
+        return <Navigate to = "/" replcae/>
+    }
+
     const areaStyle = {
         gridArea: "menu",
         boxShadow: "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset"
@@ -71,7 +81,7 @@ function SideBar( { currentLink } )
                         <a className="w-[100%]">Help</a>
                     </div>
 
-                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("SignOut");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
+                    <div onClick={(e) => {e.preventDefault();setRedirect(true)}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
                         <img style={imgStyle} src={SignOutIcon} alt="" />
                         <a className="w-[100%]">Sign out</a>
                     </div>

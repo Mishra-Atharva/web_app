@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.Connection;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
@@ -32,6 +33,14 @@ public class MainController {
     public List<Users> get_users()
     {
         return this.u_repo.getAll();
+    }
+
+    @PostMapping("/user")
+    public List<Map<String, Object>> get_user(@RequestBody Map<String, Object> data)
+    {
+        String email = (String) data.get("email");
+        System.out.println(email);
+        return u_repo.find(email);
     }
 
     @GetMapping("/address")

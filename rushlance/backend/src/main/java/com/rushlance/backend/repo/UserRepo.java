@@ -4,9 +4,11 @@ import com.rushlance.backend.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.NativeQuery;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface UserRepo extends JpaRepository<Users, Integer>
@@ -16,6 +18,6 @@ public interface UserRepo extends JpaRepository<Users, Integer>
     @Query(value="SELECT * FROM USERS", nativeQuery=true)
     List<Users> getAll();
 
-//    @Query(value="INSERT INTO USERS(first_name, last_name, email, password, date_of_birth, phone, user_type) VALUES (user.first_name, user.last_name, user.email, user.password, user.dob, user.phone, user.type)", nativeQuery=true)
-//    save(Users user);
+    @Query(value = "SELECT first_name, last_name, email, date_of_birth, phone, user_type FROM USERS WHERE email = :email", nativeQuery = true)
+    List<Map<String, Object>> find(@Param("email") String email);
 }

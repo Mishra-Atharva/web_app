@@ -13,6 +13,7 @@ export async function login(email, password)
     // Success or Fail
     if (result)
     {
+        localStorage.setItem("email", email);
         localStorage.setItem("token", result);
         return true;
     }

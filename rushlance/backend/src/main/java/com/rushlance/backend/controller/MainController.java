@@ -4,13 +4,14 @@ import backend.Database;
 import com.rushlance.backend.model.*;
 import com.rushlance.backend.repo.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Connection;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:8080")
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 public class MainController {
     @Autowired
     private ServiceRepo s_repo;

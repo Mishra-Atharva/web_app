@@ -14,7 +14,7 @@ export async function data()
             {
                 "Content-Type": "application/json", 
                 "Authorization": `Bearer ${token}`  
-            }, null);
+            });
     
         if (result)
         {

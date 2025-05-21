@@ -23,9 +23,9 @@ export default function App() {
               </PublicRoute>
             } />
             
-            <Route path="/subscription" element={
+            {/* <Route path="/subscription" element={
               <Subscription />
-            } />
+            } /> */}
 
             <Route path="/dashboard_freelancer" element={
               <PrivateRoute>

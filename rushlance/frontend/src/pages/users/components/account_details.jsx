@@ -47,7 +47,7 @@ function AccountDetails()
             <div className="w-[90%] h-[90%] rounded-2xl m-1 p-5">
                 <p className="font-bold">{userData.first_name + " " + userData.last_name}</p>
                 <p>{userData.email}</p>
-                <p>{userData.dob}</p>
+                <p>{userData.date_of_birth}</p>
                 <p>{userData.phone}</p>
 
             </div>

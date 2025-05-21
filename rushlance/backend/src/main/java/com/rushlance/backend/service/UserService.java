@@ -7,8 +7,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class UserService
@@ -23,11 +21,9 @@ public class UserService
     @Autowired
     JWTService jwtService;
 
-    public Users register(Users user)
-    {
+    public Users register(Users user) {
         return repo.save(user);
     }
-
     public String verify(Users user)
     {
         Authentication auth = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));

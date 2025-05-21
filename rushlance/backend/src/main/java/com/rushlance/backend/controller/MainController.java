@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.Connection;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
-@CrossOrigin
 public class MainController {
     @Autowired
     private ServiceRepo s_repo;
@@ -58,4 +58,3 @@ public class MainController {
     }
 
 }
-

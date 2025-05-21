@@ -7,9 +7,12 @@ import DashboardFreelancer from './pages/users/freelancer/dashboard';
 import DashboardClient from './pages/users/client/dashboard';
 import PublicRoute from './PublicRoute';
 import PrivateRoute from "./PrivateRoute";
+import { data } from "./utils/data.js";
 
 
 export default function App() {
+  
+  const services = data();
 
   return (
     <Router>

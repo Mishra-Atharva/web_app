@@ -34,7 +34,7 @@ public class SecurityConfig
                 .csrf(AbstractHttpConfigurer::disable)
                 .httpBasic(Customizer.withDefaults())
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("login", "signup")
+                        .requestMatchers("login", "signup", "service")
                         .permitAll()
                         .anyRequest().authenticated())
 

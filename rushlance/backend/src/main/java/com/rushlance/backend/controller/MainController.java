@@ -36,7 +36,7 @@ public class MainController {
     }
 
     @PostMapping("/user")
-    public List<Map<String, Object>> get_user(@RequestBody Map<String, Object> data)
+    public Map<String, Object> get_user(@RequestBody Map<String, Object> data)
     {
         String email = (String) data.get("email");
         System.out.println(email);

@@ -5,7 +5,10 @@ import { fetchData } from "./fetch.js";
 export async function login(email, password)
 {
     // Connecting to the API
-    const result = await fetchData("login", "POST", {"Content-Type": "application/json"}, {
+    const result = await fetchData("login", "POST", {
+        "Content-Type": "application/json"
+    }, 
+    {
         email, 
         password: password
     });

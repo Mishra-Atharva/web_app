@@ -1,18 +1,15 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/general/Home';
 import Signup from './pages/login/signup';
-import Subscription from './pages/general/subscription';
+// import Subscription from './pages/general/subscription.jsx';
 import DashboardAdmin from './pages/users/admin/dashboard';
 import DashboardFreelancer from './pages/users/freelancer/dashboard';
 import DashboardClient from './pages/users/client/dashboard';
 import PublicRoute from './PublicRoute';
 import PrivateRoute from "./PrivateRoute";
-import { data } from "./utils/data.js";
 
 
 export default function App() {
-  
-  const services = data();
 
   return (
     <Router>

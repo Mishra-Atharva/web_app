@@ -1,4 +1,4 @@
-SELECT * FROM USERS;
+SET datestyle = ISO, MDY;
 
 create table USERS (
 	user_id SERIAL PRIMARY KEY,
@@ -10,6 +10,7 @@ create table USERS (
 	phone VARCHAR(50) NOT NULL,
 	user_type VARCHAR(10) CHECK (user_type IN ('Client', 'Freelancer', 'Admin'))NOT NULL
 );
+
 
 insert into USERS (first_name, last_name, email, password, date_of_birth, phone, user_type) values ('Anton', 'Bakhrushin', 'abakhrushin0@godaddy.com', '$2a$04$IVRm6zIw02nVYeV7E1cbZuFoVn2QhMgV0cX8Bfn.7JBU4.6nkJcL2', '7/22/2024', '727-961-2707', 'Freelancer');
 insert into USERS (first_name, last_name, email, password, date_of_birth, phone, user_type) values ('Candra', 'Mongain', 'cmongain1@t.co', '$2a$04$opaypHamkuT05fEkNLqUteGcztu71GzunPCOdNBXgP7GScD/bP54W', '2/3/2025', '506-857-4611', 'Client');

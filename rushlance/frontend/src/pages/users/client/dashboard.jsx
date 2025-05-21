@@ -3,12 +3,10 @@ import SideBar from "../components/sidebar";
 import Content from "../components/content";
 import Footer from "../components/footer";
 import { useState } from "react";
-import { data } from "./utils/data.js";
 
 function DashboardClient()
 {
     const [link, setLink] = useState("Dashboard");
-    data();
 
     const style = {
         width: "100vw",

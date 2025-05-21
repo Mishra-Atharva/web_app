@@ -2,7 +2,7 @@
 import { fetchData } from "./fetch.js";
 
 // Getting data for the homepage from the API
-export async function data()
+export async function service_data()
 {
     const token = localStorage.getItem("token");
 
@@ -18,7 +18,6 @@ export async function data()
     
         if (result)
         {
-            console.log(JSON.parse(result));
             return JSON.parse(result);
         }
         else 

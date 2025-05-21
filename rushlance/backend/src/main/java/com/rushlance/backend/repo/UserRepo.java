@@ -19,5 +19,5 @@ public interface UserRepo extends JpaRepository<Users, Integer>
     List<Users> getAll();
 
     @Query(value = "SELECT first_name, last_name, email, date_of_birth, phone, user_type FROM USERS WHERE email = :email", nativeQuery = true)
-    List<Map<String, Object>> find(@Param("email") String email);
+    Map<String, Object> find(@Param("email") String email);
 }

@@ -15,10 +15,7 @@ function Subscription() {
       <NavigationBar />
 
       <div style={{ display: "flex", flex: 1 }}>
-        {/* Sidebar */}
-        <div style={{ width: "250px" }}>
-          <SideBar currentLink={{ setLink: (link) => console.log(link) }} />
-        </div>
+       
 
         {/* Main Content */}
         <main

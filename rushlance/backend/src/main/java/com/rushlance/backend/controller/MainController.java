@@ -43,16 +43,11 @@ public class MainController {
         return u_repo.find(email);
     }
 
-    @GetMapping("/address")
-    public List<Address> get_address()
+    @PostMapping("/booking")
+    public List<Booking> get_booking(@RequestBody Map<String, Object> data)
     {
-        return this.a_repo.getAll();
-    }
-
-    @GetMapping("/booking")
-    public List<Booking> get_active_task()
-    {
-        return this.b_repo.getAll();
+        String email = (String) data.get("email");
+        return this.b_repo.find(email);
     }
 
     @GetMapping("/service")

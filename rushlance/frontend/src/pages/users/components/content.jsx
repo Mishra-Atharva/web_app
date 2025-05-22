@@ -1,5 +1,7 @@
 import AccountDetails from "./account_details";
 import History from "../components/history.jsx";
+import ChangeDetails from "./change_detail.jsx";
+import Bookings from "./bookings..jsx";
 
 function Content( {currentLink} )
 {
@@ -22,7 +24,7 @@ function Content( {currentLink} )
             {/* Account Details */}
             {currentLink.link == "Account" && (
                 <>
-                    <h1>Account Details</h1>
+                    <ChangeDetails/>
                 </>
             )}
 
@@ -36,7 +38,7 @@ function Content( {currentLink} )
             {/* Bookings */}
             {currentLink.link == "Bookings" && (
                 <>
-                    <h1>Bookings</h1>
+                    <Bookings/>
                 </>
             )}
 

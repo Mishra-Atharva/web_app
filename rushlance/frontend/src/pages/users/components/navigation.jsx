@@ -1,4 +1,5 @@
 import DownIcon from "../assets/down_arrow.svg";
+import { useNavigate } from "react-router-dom";
 
 function NavigationBar()
 {
@@ -14,6 +15,16 @@ function NavigationBar()
 
     }
 
+    const navigate = useNavigate();
+
+    const handleNavigation = (path) => {
+        navigate(path, {
+            state: {
+                detail: ""
+            }
+        });
+    };
+
     return (
         <nav style = { style } className="flex flex-row justify-between items-center p-5 gap-10">
             <div className="text-center p-10">
@@ -21,9 +32,9 @@ function NavigationBar()
             </div>
 
             <ul className="flex flex-row gap-10 justify-center items-center">
-                <li style = { linkStyle }>Home</li>
-                <li style = { linkStyle }>Bookings</li>
-                <li style = { linkStyle }>Account</li>
+                <li style = { linkStyle } onClick={() => handleNavigation("/")}>Home</li>
+                <li style = { linkStyle } onClick={() => handleNavigation("/dashboard_client", { detail: "Bookings" })}>Bookings</li>
+                <li style = { linkStyle } onClick={() => handleNavigation("/dashboard_client")}>Account</li>
             </ul>
 
             <div className="flex flex-col p-10">

@@ -22,6 +22,12 @@ public class Booking
     @Column(name = "freelancer_id")
     private int freelancer_id;
 
+    @Column(name = "service_title")
+    private String service_title;
+
+    @Column(name = "service_detail")
+    private String service_detail;
+
     @Column(name = "date")
     private LocalDate date;
 
@@ -30,6 +36,10 @@ public class Booking
 
     public int getBooking_id() {
         return booking_id;
+    }
+
+    public void setBooking_id(int booking_id) {
+        this.booking_id = booking_id;
     }
 
     public int getService_id() {
@@ -56,6 +66,22 @@ public class Booking
         this.freelancer_id = freelancer_id;
     }
 
+    public String getService_title() {
+        return service_title;
+    }
+
+    public void setService_title(String service_title) {
+        this.service_title = service_title;
+    }
+
+    public String getService_detail() {
+        return service_detail;
+    }
+
+    public void setService_detail(String service_detail) {
+        this.service_detail = service_detail;
+    }
+
     public LocalDate getDate() {
         return date;
     }
@@ -79,8 +105,11 @@ public class Booking
                 ", service_id=" + service_id +
                 ", client_id=" + client_id +
                 ", freelancer_id=" + freelancer_id +
+                ", service_title='" + service_title + '\'' +
+                ", service_detail='" + service_detail + '\'' +
                 ", date=" + date +
                 ", status='" + status + '\'' +
                 '}';
     }
 }
+

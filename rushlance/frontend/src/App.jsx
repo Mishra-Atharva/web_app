@@ -1,7 +1,7 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/general/Home';
 import Signup from './pages/login/signup';
-// import Subscription from './pages/general/subscription.jsx';
+import Subscription from './pages/general/subscription.jsx';
 import DashboardAdmin from './pages/users/admin/dashboard';
 import DashboardFreelancer from './pages/users/freelancer/dashboard';
 import DashboardClient from './pages/users/client/dashboard';
@@ -23,9 +23,9 @@ export default function App() {
               </PublicRoute>
             } />
             
-            {/* <Route path="/subscription" element={
+            {<Route path="/subscription" element={
               <Subscription />
-            } /> */}
+            } /> }
 
             <Route path="/dashboard_freelancer" element={
               <PrivateRoute>

@@ -1,20 +1,20 @@
 // Imports
-import { fetchData } from "./fetch.js";
+import { fetchData } from "../../../utils/fetch.js";
 import { login } from "./login.js";
 
 // Handles registering a new user
-export async function signup(fname, lname, email, pass, number, dob, userType)
+export async function signup(name, gender, dob, email, password, phone, type)
 {
 
     // Registering user by the API
     const result = await fetchData("signup", "POST", {"Content-Type": "application/json"}, {
-        "first_name": fname,
-        "last_name": lname,
-        "email": email,
-        "password": pass,
-        "phone": number,
+        "full_name": name,
+        "gender": gender,
         "date_of_birth": dob,
-        "user_type": userType
+        "email": email,
+        "password_hash": password,
+        "phone": phone,
+        "user_type": type
     });
 
     // Success or Fail

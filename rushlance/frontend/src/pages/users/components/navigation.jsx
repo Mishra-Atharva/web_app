@@ -1,55 +1,31 @@
-import DownIcon from "../assets/down_arrow.svg";
-import { useNavigate } from "react-router-dom";
+/*  src/pages/components/navigation.jsx  */
 
-function NavigationBar()
-{
-    const style = {
-        width: "100%",
-        height: "100%",
-        gridArea: "header"
-    };
+function NavigationBar() {
+  const style = { gridArea: "header" };
+  const linkStyle = { cursor: "pointer", padding: "20px" };
 
-    const linkStyle = {
-        cursor: "pointer",
-        padding: "20px",
+  return (
+    <nav
+      style={style}
+      className="w-full h-full flex items-center justify-between bg-gray-100 px-10"
+    >
+      {/* Logo */}
+      <h1 className="text-2xl font-bold">RushLance</h1>
 
-    }
+      {/* just “Home” per spec */}
+      <ul className="flex gap-6 font-medium">
+        <li style={linkStyle}>Home</li>
+      </ul>
 
-    const navigate = useNavigate();
-
-    const handleNavigation = (path) => {
-        navigate(path, {
-            state: {
-                detail: ""
-            }
-        });
-    };
-
-    return (
-        <nav style = { style } className="flex flex-row justify-between items-center p-5 gap-10">
-            <div className="text-center p-10">
-                <h1 className="font-bold text-3xl">RushLance</h1>
-            </div>
-
-            <ul className="flex flex-row gap-10 justify-center items-center">
-                <li style = { linkStyle } onClick={() => handleNavigation("/")}>Home</li>
-                <li style = { linkStyle } onClick={() => handleNavigation("/dashboard_client", { detail: "Bookings" })}>Bookings</li>
-                <li style = { linkStyle } onClick={() => handleNavigation("/dashboard_client")}>Account</li>
-            </ul>
-
-            <div className="flex flex-col p-10">
-                <div className="w-[150px] h-[35px] rounded-full border-1 border-black flex justify-center items-center shadow-[box-shadow:_rgba(100,_100,_111,_0.2)_0px_7px_29px_0px]">
-                    <div className="flex flex-row justify-center items-center">
-                        <p className="w-[80%] px-5">Location</p>
-                        <img src={DownIcon} className="w-[20%] h-[20%]"/>
-                    </div>
-                </div>
-                <div className="hidden absolute right-[1%] top-[8%] w-[350px] h-[250px] rounded-lg border-1 border-black flex justify-center items-center shadow-[box-shadow:_rgba(100,_100,_111,_0.2)_0px_7px_29px_0px]">
-
-                </div>
-            </div>
-        </nav>
-    );
+      {/* Location selector with a plain ▼ glyph instead of an image */}
+      <div className="relative">
+        <div className="w-[150px] h-[35px] rounded-full bg-white flex items-center justify-between shadow text-sm px-4">
+          <span>Location</span>
+          <span className="text-gray-500">▼</span>
+        </div>
+      </div>
+    </nav>
+  );
 }
 
 export default NavigationBar;

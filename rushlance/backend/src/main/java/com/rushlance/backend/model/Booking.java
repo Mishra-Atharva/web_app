@@ -1,19 +1,22 @@
 package com.rushlance.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.CurrentTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 
 @Entity
 public class Booking
 {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @Column(name = "client_id")
     @JsonProperty("client_id")
@@ -36,14 +39,14 @@ public class Booking
     private LocalDate booked_at;
 
     @Column(name = "completed_at")
-    @JsonProperty("completed_at")
-    private LocalDate completed_at;
+    @UpdateTimestamp
+    private OffsetDateTime completed_at;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -87,11 +90,11 @@ public class Booking
         this.booked_at = booked_at;
     }
 
-    public LocalDate getCompleted_at() {
+    public OffsetDateTime getCompleted_at() {
         return completed_at;
     }
 
-    public void setCompleted_at(LocalDate completed_at) {
+    public void setCompleted_at(OffsetDateTime completed_at) {
         this.completed_at = completed_at;
     }
 

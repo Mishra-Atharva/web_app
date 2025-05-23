@@ -1,16 +1,18 @@
 // Importing
-import { fetchData } from "./fetch.js";
+import { fetchData } from "../../../utils/fetch.js";
 
 // Handles user login
 export async function login(email, password)
 {
+    console.log(email);
+    console.log(password);
     // Connecting to the API
     const result = await fetchData("login", "POST", {
         "Content-Type": "application/json"
-    }, 
-    {
-        email, 
-        password: password
+        }, 
+        {
+            email, 
+            password: password
     });
     
     // Success or Fail

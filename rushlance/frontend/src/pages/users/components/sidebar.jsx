@@ -1,98 +1,142 @@
-import DashboardIcon from "../assets/dashboard.svg";
-import AccountIcon from "../assets/account.svg";
-import PaymentIcon from "../assets/payment.svg";
-import BookingIcon from "../assets/booking.svg";
-import SettingsIcon from "../assets/settings.svg";
-import HelpIcon from "../assets/help.svg";
-import SignOutIcon from "../assets/signout.svg";
+/*  src/pages/users/components/sidebar.jsx  */
+
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 
-function SideBar( { currentLink } )
-{
+/* ───── placeholder icon factory (grey square, text label) */
+const icon = size => txt =>
+  `https://placehold.co/${size}x${size}/dddddd/555555?text=${encodeURIComponent(
+    txt
+  )}`;
 
-    const [redirect, setRedirect] = useState(false);
-    if (redirect)
-    {
-        localStorage.clear();
-        return <Navigate to = "/" replcae/>
-    }
+/* base 36-px icon for admin, 32-px for freelancer, 28-px for client */
+const iconAdmin       = icon(36);
+const iconFreelancer  = icon(32);
+const iconClient      = icon(28);
 
-    const areaStyle = {
+const ICONS_ADMIN = {
+  Dashboard:   iconAdmin("DB"),
+  Reports:     iconAdmin("RP"),
+  JobListings: iconAdmin("JL"),
+  Chat:        iconAdmin("CH"),
+  Bookings:    iconAdmin("BK"),
+  Settings:    iconAdmin("ST"),
+  Clients:     iconAdmin("CL"),
+  Freelancers: iconAdmin("FR"),
+  Help:        iconAdmin("?"),
+  SignOut:     iconAdmin("S")
+};
+
+const ICONS_FREELANCER = {
+  Dashboard:  iconFreelancer("DB"),
+  Profile:    iconFreelancer("PR"),
+  Services:   iconFreelancer("SV"),
+  Projects:   iconFreelancer("PJ"),
+  Reviews:    iconFreelancer("RV"),
+  Settings:   iconFreelancer("ST"),
+  Help:       iconFreelancer("?"),
+  SignOut:    iconFreelancer("S")
+};
+
+const ICONS_CLIENT = {
+  Dashboard:  iconClient("DB"),
+  Account:    iconClient("AC"),
+  Payment:    iconClient("$"),
+  Bookings:   iconClient("BK"),
+  Settings:   iconClient("ST"),
+  chat:       iconClient("CH"),
+  Help:       iconClient("?"),
+  SignOut:    iconClient("S")
+};
+
+function SideBar({ currentLink, userType = "client" }) {
+  const [redirect, setRedirect] = useState(false);
+  if (redirect) {
+    localStorage.clear();
+    return <Navigate to="/" replace />;
+  }
+
+  /* link sets */
+  const clientLinks = [
+    "Dashboard", "Account", "Payment", "Bookings",
+    "Settings","chat", "Help", "SignOut"
+  ];
+  const freelancerLinks = [
+    "Dashboard", "Profile", "Services", "Projects",
+    "Reviews", "Settings", "Help", "SignOut"
+  ];
+  const adminLinks = [
+    "Dashboard", "Reports", "JobListings", "Chat",
+    "Bookings", "Settings", "Clients", "Freelancers",
+    "Help", "SignOut"
+  ];
+
+  /* helpers */
+  const label = k =>
+    k === "SignOut" ? "Sign out" : k.replace(/([A-Z])/g, " $1").trim();
+
+  const links =
+    userType === "admin"
+      ? adminLinks
+      : userType === "freelancer"
+      ? freelancerLinks
+      : clientLinks;
+
+  const ICONS =
+    userType === "admin"
+      ? ICONS_ADMIN
+      : userType === "freelancer"
+      ? ICONS_FREELANCER
+      : ICONS_CLIENT;
+
+  /* sizing */
+  const sideWidth = userType === "admin"
+    ? "w-[270px]"
+    : userType === "freelancer"
+    ? "w-[240px]"
+    : "w-[220px]";
+
+  const btnPad   = userType === "admin" ? "py-4 px-6" : "py-3 px-5";
+  const fontSize = userType === "admin" ? "text-[17px]" : "text-[15px]";
+  const iconSize = userType === "admin" ? 36 : userType === "freelancer" ? 32 : 28;
+  const baseBtn  = "flex items-center gap-4 rounded-lg transition-colors";
+
+  return (
+    <aside
+      style={{
         gridArea: "menu",
-        boxShadow: "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset"
-    };
+        boxShadow: "rgba(0,0,0,0.08) 0 2px 4px, rgba(0,0,0,0.04) 0 1px 2px"
+      }}
+      className={`m-3 rounded-2xl bg-white flex flex-col gap-7 text-black ${sideWidth} select-none`}
+    >
+      <h1 className="font-semibold text-xl px-7 pt-7">Main Menu</h1>
 
-    const imgStyle = {
-        width: "30%",
-        height: "30%"
-    }
-
-    return (
-        <div style = { areaStyle } className=" p-5 m-2 rounded-2xl bg-[#ffffff] flex flex-col gap-5">
-            <div className="w-[100%]">
-
-                <div className="w-[100%] h-[10%] ">
-                    <h1 className="font-medium text-xl">Main Menu</h1>
-                </div>
-
-                <br />
-
-                <div className="w-[100%] grid">
-                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Dashboard");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
-                        <img style={imgStyle} src={DashboardIcon}/>
-                        <a className="w-[100%]">Dashboard</a>
-                    </div>
-
-                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Account");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
-                        <img style={imgStyle} src={AccountIcon}/>
-                        <a className="w-[100%]">Account Details</a>
-                    </div>
-
-                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Payment");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
-                        <img style={imgStyle} src={PaymentIcon}/>
-                        <a className="w-[100%]">Payment Method</a>
-                    </div>
-
-                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Bookings");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
-                        <img style={imgStyle} src={BookingIcon}/>
-                        <a className="w-[100%]">Bookings</a>
-                    </div>
-
-                </div>
-            </div>
-
-            <div className="w-[100%]">
-                <div className="w-[100%] h-[10%] ">
-                    <h1 className="font-medium text-xl">Prefrence</h1>
-                </div>
-                <br />
-                <div>
-                <div className="w-[100%] grid">
-
-                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Settings");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
-                        <img style={imgStyle} src={SettingsIcon} alt="" />
-                        <a className="w-[100%]">Settings</a>
-
-                    </div>
-
-                    <div onClick={(e) => {e.preventDefault();currentLink.setLink("Help");}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
-                        <img style={imgStyle} src={HelpIcon} alt="" />
-                        <a className="w-[100%]">Help</a>
-                    </div>
-
-                    <div onClick={(e) => {e.preventDefault();setRedirect(true)}} className="w-[100%] cursor-pointer flex flex-row justify-center items-center hover:bg-gray-300 rounded-lg">
-                        <img style={imgStyle} src={SignOutIcon} alt="" />
-                        <a className="w-[100%]">Sign out</a>
-                    </div>
-
-                </div>
-                    
-                </div>
-            </div>
-        </div>   
-    );
-
+      <nav className="flex-1 px-3 pb-8 space-y-2 overflow-y-auto">
+        {links.map(k => {
+          const active = currentLink.link === k;
+          return (
+            <button
+              key={k}
+              onClick={() =>
+                k === "SignOut" ? setRedirect(true) : currentLink.setLink(k)
+              }
+              className={`${baseBtn} ${btnPad} ${fontSize} ${
+                active ? "bg-gray-200" : "hover:bg-gray-100"
+              }`}
+            >
+              <img
+                src={ICONS[k] || iconClient("·")}
+                alt=""
+                style={{ width: iconSize, height: iconSize }}
+                className="rounded-md"
+              />
+              <span className="flex-1 text-left">{label(k)}</span>
+            </button>
+          );
+        })}
+      </nav>
+    </aside>
+  );
 }
 
 export default SideBar;

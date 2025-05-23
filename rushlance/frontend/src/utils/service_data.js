@@ -10,7 +10,7 @@ export async function service_data()
     {
         const token = localStorage.getItem("token");
 
-        const result = await fetchData("service", "GET", 
+        const result = await fetchData("services", "GET", 
             {
                 "Content-Type": "application/json", 
                 "Authorization": `Bearer ${token}`  

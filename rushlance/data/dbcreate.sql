@@ -1,9 +1,12 @@
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+	gender VARCHAR(7) NOT NULL,
+	date_of_birth DATE NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
+	phone TEXT NOT NULL,
     user_type VARCHAR(10) CHECK (user_type IN ('client', 'freelancer', 'admin')) NOT NULL,
-    full_name VARCHAR(100) NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -24,7 +27,7 @@ CREATE TABLE bookings (
     service_id INTEGER NOT NULL,
 	freelancer_id INTEGER NOT NULL,
     status VARCHAR(20) CHECK (status IN ('pending', 'confirmed', 'completed', 'cancelled')) DEFAULT 'pending',
-    booked_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    booked_at DATE,
     completed_at TIMESTAMP WITH TIME ZONE,
     FOREIGN KEY (client_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (service_id) REFERENCES services(id) ON DELETE CASCADE

@@ -1,18 +1,19 @@
 package com.rushlance.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 
 @Entity
 public class Messages {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @Column(name = "sender_id")
     @JsonProperty("sender_id")
@@ -31,18 +32,18 @@ public class Messages {
     private String content;
 
     @Column(name = "sent_at")
-    @JsonProperty("sent_at")
-    private LocalDate sent_at;
+    @CreationTimestamp
+    private OffsetDateTime sent_at;
 
     @Column(name = "is_read")
     @JsonProperty("is_read")
     private boolean is_read;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -78,15 +79,15 @@ public class Messages {
         this.content = content;
     }
 
-    public LocalDate getSent_at() {
+    public OffsetDateTime getSent_at() {
         return sent_at;
     }
 
-    public void setSent_at(LocalDate sent_at) {
+    public void setSent_at(OffsetDateTime sent_at) {
         this.sent_at = sent_at;
     }
 
-    public boolean getIs_read() {
+    public boolean isIs_read() {
         return is_read;
     }
 

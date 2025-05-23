@@ -10,58 +10,35 @@ import java.time.LocalDate;
 @Entity
 public class Users
 {
-
     @Id
-    @Column(name = "user_id")
+    @Column(name = "id")
     private int id;
-
-    @Column(name = "first_name")
-    @JsonProperty("first_name")
-    private String first_name;
-
-    @Column(name = "last_name")
-    @JsonProperty("last_name")
-    private String last_name;
 
     @Column(name = "email")
     @JsonProperty("email")
     private String email;
 
-    @Column(name = "password")
-    @JsonProperty("password")
-    private String password;
-
-    @Column(name = "date_of_birth")
-    @JsonProperty("date_of_birth")
-    private LocalDate dob;
-
-    @Column(name = "phone")
-    @JsonProperty("phone")
-    private String phone;
+    @JsonProperty("password_hash")
+    private String password_hash;
 
     @Column(name = "user_type")
     @JsonProperty("user_type")
-    private String type;
+    private String user_type;
 
-    public int getId()
-    {
+    @Column(name = "full_name")
+    @JsonProperty("full_name")
+    private String full_name;
+
+    @Column(name = "created_at")
+    @JsonProperty("created_at")
+    private LocalDate created_at;
+
+    public int getId() {
         return id;
     }
 
-    public String getFirst_name() {
-        return first_name;
-    }
-
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
-    }
-
-    public String getLast_name() {
-        return last_name;
-    }
-
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -72,49 +49,47 @@ public class Users
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPassword_hash() {
+        return password_hash;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword_hash(String password_hash) {
+        this.password_hash = password_hash;
     }
 
-    public LocalDate getDob() {
-        return dob;
+    public String getUser_type() {
+        return user_type;
     }
 
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
+    public void setUser_type(String user_type) {
+        this.user_type = user_type;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getFull_name() {
+        return full_name;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setFull_name(String full_name) {
+        this.full_name = full_name;
     }
 
-    public String getType() {
-        return type;
+    public LocalDate getCreated_at() {
+        return created_at;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCreated_at(LocalDate created_at) {
+        this.created_at = created_at;
     }
 
     @Override
     public String toString() {
         return "Users{" +
                 "id=" + id +
-                ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", dob='" + dob + '\'' +
-                ", phone='" + phone + '\'' +
-                ", type='" + type + '\'' +
+                ", password_hash='" + password_hash + '\'' +
+                ", user_type='" + user_type + '\'' +
+                ", full_name='" + full_name + '\'' +
+                ", created_at=" + created_at +
                 '}';
     }
 }

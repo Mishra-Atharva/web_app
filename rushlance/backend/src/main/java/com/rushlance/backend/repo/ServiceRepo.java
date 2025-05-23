@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface ServiceRepo extends JpaRepository<Service, Long>
 {
-    @Query(value = "SELECT * FROM service", nativeQuery = true)
-    List<Service> getServices();
+    @Query(value = "SELECT * FROM services", nativeQuery = true)
+    List<Service> getAll();
 }

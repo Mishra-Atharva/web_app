@@ -26,7 +26,7 @@ public class UserService
     }
     public String verify(Users user)
     {
-        Authentication auth = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
+        Authentication auth = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword_hash()));
 
         if (auth.isAuthenticated())
         {

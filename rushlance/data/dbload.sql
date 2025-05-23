@@ -3,42 +3,42 @@ TRUNCATE TABLE transactions, reviews, messages, notifications, bookings, service
 
 -- Admins (5)
 INSERT INTO users (email, password_hash, user_type, full_name, created_at) VALUES
-('admin1@platform.com', 'hash1', 'admin', 'Admin One', '2023-01-01 08:00:00+00'),
-('admin2@platform.com', 'hash2', 'admin', 'Admin Two', '2023-01-02 09:00:00+00'),
-('admin3@platform.com', 'hash3', 'admin', 'Admin Three', '2023-01-03 10:00:00+00'),
-('admin4@platform.com', 'hash4', 'admin', 'Admin Four', '2023-01-04 11:00:00+00'),
-('admin5@platform.com', 'hash5', 'admin', 'Admin Five', '2023-01-05 12:00:00+00');
+('admin@gmail.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'admin', 'Admin One', '2023-01-01 08:00:00+00'),
+('admin2@platform.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'admin', 'Admin Two', '2023-01-02 09:00:00+00'),
+('admin3@platform.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'admin', 'Admin Three', '2023-01-03 10:00:00+00'),
+('admin4@platform.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'admin', 'Admin Four', '2023-01-04 11:00:00+00'),
+('admin5@platform.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'admin', 'Admin Five', '2023-01-05 12:00:00+00');
 
 -- Freelancers (10)
 INSERT INTO users (email, password_hash, user_type, full_name, created_at) VALUES
-('dev1@example.com', 'hash6', 'freelancer', 'John Developer', '2023-01-06 13:00:00+00'),
-('designer1@example.com', 'hash7', 'freelancer', 'Sarah Designer', '2023-01-07 14:00:00+00'),
-('writer1@example.com', 'hash8', 'freelancer', 'Mike Writer', '2023-01-08 15:00:00+00'),
-('marketer1@example.com', 'hash9', 'freelancer', 'Emma Marketer', '2023-01-09 16:00:00+00'),
-('consultant1@example.com', 'hash10', 'freelancer', 'David Consultant', '2023-01-10 17:00:00+00'),
-('tutor1@example.com', 'hash11', 'freelancer', 'Lisa Tutor', '2023-01-11 18:00:00+00'),
-('photographer1@example.com', 'hash12', 'freelancer', 'James Photographer', '2023-01-12 19:00:00+00'),
-('editor1@example.com', 'hash13', 'freelancer', 'Olivia Editor', '2023-01-13 20:00:00+00'),
-('translator1@example.com', 'hash14', 'freelancer', 'Daniel Translator', '2023-01-14 21:00:00+00'),
-('analyst1@example.com', 'hash15', 'freelancer', 'Sophia Analyst', '2023-01-15 22:00:00+00');
+('dev@gmail.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'freelancer', 'John Developer', '2023-01-06 13:00:00+00'),
+('designer1@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'freelancer', 'Sarah Designer', '2023-01-07 14:00:00+00'),
+('writer1@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'freelancer', 'Mike Writer', '2023-01-08 15:00:00+00'),
+('marketer1@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'freelancer', 'Emma Marketer', '2023-01-09 16:00:00+00'),
+('consultant1@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'freelancer', 'David Consultant', '2023-01-10 17:00:00+00'),
+('tutor1@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'freelancer', 'Lisa Tutor', '2023-01-11 18:00:00+00'),
+('photographer1@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'freelancer', 'James Photographer', '2023-01-12 19:00:00+00'),
+('editor1@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'freelancer', 'Olivia Editor', '2023-01-13 20:00:00+00'),
+('translator1@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'freelancer', 'Daniel Translator', '2023-01-14 21:00:00+00'),
+('analyst1@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'freelancer', 'Sophia Analyst', '2023-01-15 22:00:00+00');
 
 -- Clients (15)
 INSERT INTO users (email, password_hash, user_type, full_name, created_at) VALUES
-('client1@example.com', 'hash16', 'client', 'Client One', '2023-01-16 08:00:00+00'),
-('client2@example.com', 'hash17', 'client', 'Client Two', '2023-01-17 09:00:00+00'),
-('client3@example.com', 'hash18', 'client', 'Client Three', '2023-01-18 10:00:00+00'),
-('client4@example.com', 'hash19', 'client', 'Client Four', '2023-01-19 11:00:00+00'),
-('client5@example.com', 'hash20', 'client', 'Client Five', '2023-01-20 12:00:00+00'),
-('client6@example.com', 'hash21', 'client', 'Client Six', '2023-01-21 13:00:00+00'),
-('client7@example.com', 'hash22', 'client', 'Client Seven', '2023-01-22 14:00:00+00'),
-('client8@example.com', 'hash23', 'client', 'Client Eight', '2023-01-23 15:00:00+00'),
-('client9@example.com', 'hash24', 'client', 'Client Nine', '2023-01-24 16:00:00+00'),
-('client10@example.com', 'hash25', 'client', 'Client Ten', '2023-01-25 17:00:00+00'),
-('client11@example.com', 'hash26', 'client', 'Client Eleven', '2023-01-26 18:00:00+00'),
-('client12@example.com', 'hash27', 'client', 'Client Twelve', '2023-01-27 19:00:00+00'),
-('client13@example.com', 'hash28', 'client', 'Client Thirteen', '2023-01-28 20:00:00+00'),
-('client14@example.com', 'hash29', 'client', 'Client Fourteen', '2023-01-29 21:00:00+00'),
-('client15@example.com', 'hash30', 'client', 'Client Fifteen', '2023-01-30 22:00:00+00');
+('client@gmail.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client One', '2023-01-16 08:00:00+00'),
+('client2@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Two', '2023-01-17 09:00:00+00'),
+('client3@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Three', '2023-01-18 10:00:00+00'),
+('client4@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Four', '2023-01-19 11:00:00+00'),
+('client5@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Five', '2023-01-20 12:00:00+00'),
+('client6@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Six', '2023-01-21 13:00:00+00'),
+('client7@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Seven', '2023-01-22 14:00:00+00'),
+('client8@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Eight', '2023-01-23 15:00:00+00'),
+('client9@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Nine', '2023-01-24 16:00:00+00'),
+('client10@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Ten', '2023-01-25 17:00:00+00'),
+('client11@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Eleven', '2023-01-26 18:00:00+00'),
+('client12@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Twelve', '2023-01-27 19:00:00+00'),
+('client13@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Thirteen', '2023-01-28 20:00:00+00'),
+('client14@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Fourteen', '2023-01-29 21:00:00+00'),
+('client15@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Fifteen', '2023-01-30 22:00:00+00');
 
 INSERT INTO services (freelancer_id, title, description, price, is_active, created_at) VALUES
 -- Freelancer 6 (John Developer)

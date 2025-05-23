@@ -22,6 +22,7 @@ CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
     client_id INTEGER NOT NULL,
     service_id INTEGER NOT NULL,
+	freelancer_id INTEGER NOT NULL,
     status VARCHAR(20) CHECK (status IN ('pending', 'confirmed', 'completed', 'cancelled')) DEFAULT 'pending',
     booked_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     completed_at TIMESTAMP WITH TIME ZONE,

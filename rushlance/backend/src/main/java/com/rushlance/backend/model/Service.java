@@ -1,73 +1,109 @@
 package com.rushlance.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+
+import java.time.LocalDate;
 
 @Entity
 public class Service
 {
     @Id
-    @Column(name = "service_id")
-    private int serviceId;
+    @Column(name = "id")
+    private int id;
 
     @Column(name = "freelancer_id")
-    private int freelancerId;
+    @JsonProperty("freelancer_id")
+    private int freelancer_id;
 
-    @Column(name = "service_title")
-    private String serviceTitle;
+    @Column(name = "title")
+    @JsonProperty("title")
+    private String title;
 
-    @Column(name = "service_detail")
-    private String serviceDetail;
+    @Column(name = "description")
+    @JsonProperty("description")
+    private String description;
 
-    @Column(name = "status")
-    private String status;
+    @Column(name = "price")
+    @JsonProperty("price")
+    private double price;
 
-    public int getServiceId()
-    {
-        return serviceId;
+    @Column(name = "is_active")
+    @JsonProperty("is_active")
+    private boolean is_active;
+
+    @Column(name = "created_at")
+    @JsonProperty("created_at")
+    private LocalDate created_at;
+
+    public int getId() {
+        return id;
     }
 
-    public int getFreelancerId() {
-        return freelancerId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setFreelancerId(int freelancerId) {
-        this.freelancerId = freelancerId;
+    public int getFreelancer_id() {
+        return freelancer_id;
     }
 
-    public String getServiceTitle() {
-        return serviceTitle;
+    public void setFreelancer_id(int freelancer_id) {
+        this.freelancer_id = freelancer_id;
     }
 
-    public void setServiceTitle(String serviceTitle) {
-        this.serviceTitle = serviceTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public String getServiceDetail() {
-        return serviceDetail;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setServiceDetail(String serviceDetail) {
-        this.serviceDetail = serviceDetail;
+    public String getDescription() {
+        return description;
     }
 
-    public String getStatus() {
-        return status;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public boolean isIs_active() {
+        return is_active;
+    }
+
+    public void setIs_active(boolean is_active) {
+        this.is_active = is_active;
+    }
+
+    public LocalDate getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(LocalDate created_at) {
+        this.created_at = created_at;
     }
 
     @Override
     public String toString() {
         return "Service{" +
-                "serviceId=" + serviceId +
-                ", freelancerId=" + freelancerId +
-                ", serviceTitle='" + serviceTitle + '\'' +
-                ", serviceDetail='" + serviceDetail + '\'' +
-                ", status='" + status + '\'' +
+                "id=" + id +
+                ", freelancer_id=" + freelancer_id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", is_active=" + is_active +
+                ", created_at=" + created_at +
                 '}';
     }
 }

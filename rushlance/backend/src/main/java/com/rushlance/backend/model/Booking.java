@@ -1,8 +1,10 @@
 package com.rushlance.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 
@@ -10,44 +12,39 @@ import java.time.LocalDate;
 public class Booking
 {
     @Id
-    @Column(name = "booking_id")
-    private int booking_id;
-
-    @Column(name = "service_id")
-    private int service_id;
+    @Column(name = "id")
+    private int id;
 
     @Column(name = "client_id")
+    @JsonProperty("client_id")
     private int client_id;
 
+    @Column(name = "service_id")
+    @JsonProperty("service_id")
+    private int service_id;
+
     @Column(name = "freelancer_id")
+    @JsonProperty("freelancer_id")
     private int freelancer_id;
 
-    @Column(name = "service_title")
-    private String service_title;
-
-    @Column(name = "service_detail")
-    private String service_detail;
-
-    @Column(name = "date")
-    private LocalDate date;
-
     @Column(name = "status")
+    @JsonProperty("status")
     private String status;
 
-    public int getBooking_id() {
-        return booking_id;
+    @Column(name = "booked_at")
+    @JsonProperty("booked_at")
+    private LocalDate booked_at;
+
+    @Column(name = "completed_at")
+    @JsonProperty("completed_at")
+    private LocalDate completed_at;
+
+    public int getId() {
+        return id;
     }
 
-    public void setBooking_id(int booking_id) {
-        this.booking_id = booking_id;
-    }
-
-    public int getService_id() {
-        return service_id;
-    }
-
-    public void setService_id(int service_id) {
-        this.service_id = service_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getClient_id() {
@@ -58,36 +55,20 @@ public class Booking
         this.client_id = client_id;
     }
 
+    public int getService_id() {
+        return service_id;
+    }
+
+    public void setService_id(int service_id) {
+        this.service_id = service_id;
+    }
+
     public int getFreelancer_id() {
         return freelancer_id;
     }
 
     public void setFreelancer_id(int freelancer_id) {
         this.freelancer_id = freelancer_id;
-    }
-
-    public String getService_title() {
-        return service_title;
-    }
-
-    public void setService_title(String service_title) {
-        this.service_title = service_title;
-    }
-
-    public String getService_detail() {
-        return service_detail;
-    }
-
-    public void setService_detail(String service_detail) {
-        this.service_detail = service_detail;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
     }
 
     public String getStatus() {
@@ -98,17 +79,32 @@ public class Booking
         this.status = status;
     }
 
+    public LocalDate getBooked_at() {
+        return booked_at;
+    }
+
+    public void setBooked_at(LocalDate booked_at) {
+        this.booked_at = booked_at;
+    }
+
+    public LocalDate getCompleted_at() {
+        return completed_at;
+    }
+
+    public void setCompleted_at(LocalDate completed_at) {
+        this.completed_at = completed_at;
+    }
+
     @Override
     public String toString() {
         return "Booking{" +
-                "booking_id=" + booking_id +
-                ", service_id=" + service_id +
+                "id=" + id +
                 ", client_id=" + client_id +
+                ", service_id=" + service_id +
                 ", freelancer_id=" + freelancer_id +
-                ", service_title='" + service_title + '\'' +
-                ", service_detail='" + service_detail + '\'' +
-                ", date=" + date +
                 ", status='" + status + '\'' +
+                ", booked_at=" + booked_at +
+                ", completed_at=" + completed_at +
                 '}';
     }
 }

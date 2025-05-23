@@ -12,9 +12,7 @@ import java.util.Map;
 @Repository
 public interface BookingRepo extends JpaRepository<Booking, Long>
 {
-    @Query(value="SELECT * FROM BOOKING", nativeQuery=true)
+    @Query(value="SELECT * FROM bookings", nativeQuery=true)
     List<Booking> getAll();
 
-    @Query(value = "SELECT * FROM BOOKING WHERE client_id = (SELECT user_id FROM USERS WHERE email=:email);", nativeQuery = true)
-    List<Booking> find(@Param("email") String email);
 }

@@ -1,23 +1,49 @@
 import NavigationBar from "../users/components/navigation";
+import { useState, useEffect } from "react";
+import { serviceData } from "./utils/service_data.js";
 //hh
 function Home() {
-  const services = [
-    {
-      title: "Cleaning",
-      image: "https://placehold.co/400x300?text=Cleaning&font=poppins",
-      price: "From $40 - $70",
-    },
-    {
-      title: "Floor Tiling",
-      image: "https://placehold.co/400x300?text=Floor+Tiles&font=poppins",
-      price: "From $300 - $600",
-    },
-    {
-      title: "Builders",
-      image: "https://placehold.co/400x300?text=Builders&font=poppins",
-      price: "From $1000 - $5000",
-    },
-  ];
+
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const data = await serviceData();
+        if (data) {
+          try {
+            const parsedData = typeof data === 'string' ? JSON.parse(data) : data;
+            setServices(parsedData);
+          } catch (parseError) {
+            console.error("Error parsing user data:", parseError);
+            setError("Failed to parse user data");
+          }
+        }
+      } catch (err) {
+        console.error("Error fetching user data:", err);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  // const services = [
+  //   {
+  //     title: "Cleaning",
+  //     image: "https://placehold.co/400x300?text=Cleaning&font=poppins",
+  //     price: "From $40 - $70",
+  //   },
+  //   {
+  //     title: "Floor Tiling",
+  //     image: "https://placehold.co/400x300?text=Floor+Tiles&font=poppins",
+  //     price: "From $300 - $600",
+  //   },
+  //   {
+  //     title: "Builders",
+  //     image: "https://placehold.co/400x300?text=Builders&font=poppins",
+  //     price: "From $1000 - $5000",
+  //   },
+  // ];
 
   const pastServices = [
     {
@@ -32,6 +58,7 @@ function Home() {
     },
   ];
 
+  console.log(services);
   return (
     <div style={{ fontFamily: "Poppins, sans-serif", backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
       <NavigationBar />
@@ -57,17 +84,17 @@ function Home() {
           {/* Featured Services */}
           <section>
             <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "20px" }}>Featured Services</h2>
-            <div style={{ display: "flex", gap: "30px", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: "130px", flexWrap: "wrap" }}>
               {services.map((service, index) => (
                 <div key={index} style={{
                   background: "white",
-                  width: "250px",
+                  width: "350px",
                   borderRadius: "12px",
                   padding: "20px",
                   boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
                   textAlign: "center"
                 }}>
-                  <img src={service.image} alt={service.title} style={{ width: "100%", borderRadius: "8px", marginBottom: "15px" }} />
+                  <img src="https://placehold.co/500x300" alt={service.title} style={{ width: "100%", borderRadius: "8px", marginBottom: "15px" }} />
                   <h3 style={{ fontSize: "18px", fontWeight: "600", marginBottom: "8px" }}>{service.title}</h3>
                   <p style={{ color: "#555" }}>{service.price}</p>
                 </div>
@@ -88,7 +115,7 @@ function Home() {
                   boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
                   textAlign: "center"
                 }}>
-                  <img src={service.image} alt={service.title} style={{ width: "100%", borderRadius: "8px", marginBottom: "15px" }} />
+                  <img src="https://placehold.co/400x300" alt={service.title} style={{ width: "100%", borderRadius: "8px", marginBottom: "15px" }} />
                   <h3 style={{ fontSize: "18px", fontWeight: "600", marginBottom: "8px" }}>{service.title}</h3>
                   <p style={{ color: "#555" }}>{service.price}</p>
                 </div>

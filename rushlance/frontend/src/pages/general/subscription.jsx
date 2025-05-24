@@ -1,5 +1,4 @@
 import NavigationBar from "../users/components/navigation";
-import SideBar from "../users/components/sidebar";
 
 function Subscription() {
   return (

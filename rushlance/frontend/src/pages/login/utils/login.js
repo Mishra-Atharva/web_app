@@ -4,16 +4,10 @@ import { fetchData } from "../../../utils/fetch.js";
 // Handles user login
 export async function login(email, password)
 {
-    console.log(email);
-    console.log(password);
+    const basicAuth = btoa(`${email}:${password}`);
+
     // Connecting to the API
-    const result = await fetchData("login", "POST", {
-        "Content-Type": "application/json"
-        }, 
-        {
-            email, 
-            password: password
-    });
+    const result = await fetchData("login", "POST", { "Content-Type": "application/json" }, { email: email, password_hash: password });
     
     // Success or Fail
     if (result)

@@ -13,8 +13,8 @@ export default function Signup()
 {
     // Variables
     const [choice, setChoice] = useState("signup");
-    const [fname, setFname] = useState("");
-    const [lname, setLname] = useState("");
+    const [name, setName] = useState("");
+    const [gender, setGender] = useState("");
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
     const [number, setNumber] = useState("");
@@ -23,7 +23,7 @@ export default function Signup()
     const [redirect, setRedirect] = useState(false);
     // Signup
     const register = () => {
-        if (signup(fname, lname, email, pass, number, dob, userType)) 
+        if (signup(name, gender, email, pass, number, dob, userType)) 
         {
             setRedirect(true);
         }
@@ -51,7 +51,7 @@ export default function Signup()
     return (
         <div className="flex flex-col items-center justify-center w-[100vw] h-[100vh]">
             <div style={ shadow } className="h-[70vh] w-[70%] p-0 font-['poppins'] font-semibold rounded-2xl flex flex-row bg-white">
-                <Form title={(choice == "signup") ? "Sign Up" : "Welcome Back!"} signup={{choice, setChoice}} details = { { setFname, setLname, setEmail, setPass, setDOB, setNumber, setType } } buttonEvent = {{register, access}}/>
+                <Form title={(choice == "signup") ? "Sign Up" : "Welcome Back!"} signup={{choice, setChoice}} details = { { setName, setGender, setEmail, setPass, setNumber, setDOB, setType } } buttonEvent = {{register, access}}/>
                 <Display image={(choice == "signup") ? SignImage : LoginImage} signup={choice}/>
             </div>
         </div>

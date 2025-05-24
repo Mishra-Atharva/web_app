@@ -3,7 +3,7 @@ import { fetchData } from "../../../utils/fetch.js";
 import { login } from "./login.js";
 
 // Handles registering a new user
-export async function signup(name, gender, dob, email, password, phone, type)
+export async function signup(name, gender, email, password, phone, dob, type)
 {
 
     // Registering user by the API
@@ -20,7 +20,7 @@ export async function signup(name, gender, dob, email, password, phone, type)
     // Success or Fail
     if (result)
     {
-        return login(email, pass);
+        return login(email, password);
     }
     else 
     {

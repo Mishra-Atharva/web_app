@@ -8,12 +8,10 @@ export async function fetchData(link, method, header, body)
             headers: header
         };
 
-        if (body != null && body != undefined)
+        if (body)
         {
             options.body = JSON.stringify(body);
         }
-
-        console.log (options);
 
         // Gettings a response from the API
         const response = await fetch(`http://localhost:8080/${link}`, options);

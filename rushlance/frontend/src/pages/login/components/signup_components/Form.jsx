@@ -55,17 +55,23 @@ export default function LeftView({title, signup, details, buttonEvent})
 
                     {/* Name */}
                     <div>
-                        <label htmlFor="fname" className="px-1">First name:</label>
+                        <label htmlFor="fname" className="px-1">Full Name:</label>
                         <br />
-                        <input style={input_style}  onChange={(e) => details.setFname(e.target.value)} className="outline-0 px-4 py-2" type="text" name="fname" placeholder="First name"/>
+                        <input style={input_style}  onChange={(e) => details.setName(e.target.value)} className="outline-0 px-4 py-2" type="text" name="fname" placeholder="First name"/>
                     </div>
 
                     <div>
-                        <label htmlFor="lname" className="px-1">Last name:</label>
+                        <label htmlFor="lname" className="px-1">Gender</label>
                         <br />
-                        <input style={input_style}  onChange={(e) => details.setLname(e.target.value)} className="outline-0 px-4 py-2" type="text" name="lname" placeholder="Last name"/>
+                        <select style={input_style} onChange={(e) => details.setGender(e.target.value)} className="outline-0 px-4 py-2 cursor-pointer" name="type">
+                            <option value="" disabled selected>Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                     </div>
 
+
+                    
                     {/* Credintatils */}
                     <div>
                         <label htmlFor="email" className="px-1">Email address:</label>
@@ -79,19 +85,13 @@ export default function LeftView({title, signup, details, buttonEvent})
                         <input style={input_style} onChange={(e) => details.setPass(e.target.value)} className="outline-0 px-4 py-2" type="password" name="pass" placeholder="password"/>
                     </div>
 
-                    <div>
-                        <label htmlFor="pass_con" className="px-1">Confirm Password:</label>
-                        <br />
-                        <input style={input_style} className="outline-0 px-4 py-2" type="password" name="pass_con" placeholder="confirm password"/>
-                    </div>
-
                     {/* Details  */}
                     <div>
                         <label htmlFor="dob" className="px-1">Birth Date:</label>
                         <br />
                         <input style={input_style} onChange={(e) => details.setDOB(e.target.value)} className="cursor-pointer outline-0 px-4 py-2" type="date" name="dob"/>
                     </div>
-                    
+
                     <div>
                         <label htmlFor="phone" className="px-1">Phone number:</label>
                         <br />
@@ -103,10 +103,11 @@ export default function LeftView({title, signup, details, buttonEvent})
                         <br />
                         <select style={input_style} onChange={(e) => details.setType(e.target.value)} className="outline-0 px-4 py-2 cursor-pointer" name="type">
                             <option value="" disabled selected>Select</option>
-                            <option value="Client">Client</option>
-                            <option value="Freelancer">Freelancer</option>
+                            <option value="client">Client</option>
+                            <option value="freelancer">Freelancer</option>
                         </select>
                     </div>
+                    <br />
                     <div className="w-[78%]">
                         <br />
                         <a className="text-sm float-left cursor-pointer" onClick={(e) => {e.preventDefault();signup.setChoice("login");}}>Already have an account?</a>

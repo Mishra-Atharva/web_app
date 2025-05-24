@@ -15,4 +15,7 @@ public interface BookingRepo extends JpaRepository<Booking, Long>
     @Query(value="SELECT * FROM bookings", nativeQuery=true)
     List<Booking> getAll();
 
+    @Query(value="SELECT * FROM BOOKINGS WHERE client_id IN (SELECT id FROM USERS WHERE email = ':email');", nativeQuery = true)
+    List<Booking> totalBookings(@Param("email") String email);
+
 }

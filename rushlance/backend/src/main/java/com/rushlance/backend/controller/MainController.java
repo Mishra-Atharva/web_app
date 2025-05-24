@@ -15,7 +15,6 @@ public class MainController {
     @Autowired
     private UserRepo userRepo;
 
-
     @GetMapping("/users")
     public List<Users> get_users()
     {

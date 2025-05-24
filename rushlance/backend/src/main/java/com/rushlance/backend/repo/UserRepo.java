@@ -1,5 +1,6 @@
 package com.rushlance.backend.repo;
 
+import com.rushlance.backend.model.Booking;
 import com.rushlance.backend.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.NativeQuery;

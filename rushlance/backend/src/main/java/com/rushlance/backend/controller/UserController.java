@@ -1,12 +1,14 @@
 package com.rushlance.backend.controller;
 
 import com.rushlance.backend.model.Users;
+import com.rushlance.backend.repo.UserRepo;
 import com.rushlance.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin

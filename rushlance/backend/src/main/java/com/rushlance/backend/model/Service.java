@@ -19,6 +19,10 @@ public class Service
     @JsonProperty("freelancer_id")
     private int freelancer_id;
 
+    @Column(name = "category")
+    @JsonProperty("category")
+    private String category;
+
     @Column(name = "title")
     @JsonProperty("title")
     private String title;
@@ -53,6 +57,14 @@ public class Service
 
     public void setFreelancer_id(int freelancer_id) {
         this.freelancer_id = freelancer_id;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getTitle() {
@@ -100,6 +112,7 @@ public class Service
         return "Service{" +
                 "id=" + id +
                 ", freelancer_id=" + freelancer_id +
+                ", category='" + category + '\'' +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +

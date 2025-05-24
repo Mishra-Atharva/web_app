@@ -22,10 +22,17 @@ public class MainController {
     }
 
     @PostMapping("/user")
-    public Users userData(@RequestBody Map<String, Object> email)
+    public Users getUserDetailsByEmail(@RequestBody Map<String, Object> email)
     {
         String email_str = (String) email.get("email");
         System.out.println(email_str);
         return this.userRepo.findByEmail(email_str);
+    }
+
+    @PostMapping("/userID")
+    public Map<String, Object> getUserDetailsById(@RequestBody Map<String, Object> id)
+    {
+        Integer userID = (Integer) id.get("id");
+        return this.userRepo.userIdDetails(userID);
     }
 }

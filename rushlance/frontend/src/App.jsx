@@ -7,6 +7,7 @@ import DashboardFreelancer from './pages/users/freelancer/dashboard.jsx';
 import DashboardClient from './pages/users/client/dashboard.jsx';
 import PublicRoute from './PublicRoute';
 import PrivateRoute from "./PrivateRoute";
+import Review from "./pages/general/review.jsx";
 
 export default function App() {
 
@@ -28,6 +29,10 @@ export default function App() {
             
             {<Route path="/Home" element={
               <Home />
+            } /> }
+
+            {<Route path="/review" element={
+              <Review />
             } /> }
             
 

@@ -41,77 +41,76 @@ INSERT INTO users (email, password_hash, user_type, full_name, gender, date_of_b
 ('client14@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Fourteen', 'female', '1993-05-29', '+1234567818', '2023-01-29 21:00:00+00'),
 ('client15@example.com', '$2a$12$zlsdNyY7Dxjr/oXn/IoPWeRKS7.tQiVXYuLZFWBdAtK3gojibO1Ne', 'client', 'Client Fifteen', 'male', '1994-06-30', '+1234567819', '2023-01-30 22:00:00+00');
 
-INSERT INTO services (freelancer_id, title, description, price, is_active, created_at) VALUES
--- Freelancer 6 (John Developer)
-(6, 'Website Development', 'Custom website development', 500.00, true, '2023-02-01 09:00:00+00'),
-(6, 'API Integration', 'Connect your systems via API', 300.00, true, '2023-02-02 10:00:00+00'),
-(6, 'Database Design', 'Optimized database solutions', 400.00, true, '2023-02-03 11:00:00+00'),
-(6, 'E-commerce Site', 'Online store development', 600.00, true, '2023-02-04 12:00:00+00'),
-(6, 'CMS Setup', 'Content management system setup', 250.00, true, '2023-02-05 13:00:00+00'),
+INSERT INTO services (freelancer_id, title, description, price, is_active, created_at, category) VALUES
+-- Freelancer 6 (John Developer) - Web Development
+(6, 'Website Development', 'Custom website development', 500.00, true, '2023-02-01 09:00:00+00', 'Web Development'),
+(6, 'API Integration', 'Connect your systems via API', 300.00, true, '2023-02-02 10:00:00+00', 'Web Development'),
+(6, 'Database Design', 'Optimized database solutions', 400.00, true, '2023-02-03 11:00:00+00', 'Web Development'),
+(6, 'E-commerce Site', 'Online store development', 600.00, true, '2023-02-04 12:00:00+00', 'Web Development'),
+(6, 'CMS Setup', 'Content management system setup', 250.00, true, '2023-02-05 13:00:00+00', 'Web Development'),
 
--- Freelancer 7 (Sarah Designer)
-(7, 'Logo Design', 'Professional logo creation', 150.00, true, '2023-02-06 14:00:00+00'),
-(7, 'Brand Identity', 'Complete branding package', 350.00, true, '2023-02-07 15:00:00+00'),
-(7, 'Business Cards', 'Custom business card design', 100.00, true, '2023-02-08 16:00:00+00'),
-(7, 'Social Media Kit', 'Social media templates', 200.00, true, '2023-02-09 17:00:00+00'),
-(7, 'Packaging Design', 'Product packaging design', 300.00, true, '2023-02-10 18:00:00+00'),
+-- Freelancer 7 (Sarah Designer) - Graphic Design
+(7, 'Logo Design', 'Professional logo creation', 150.00, true, '2023-02-06 14:00:00+00', 'Graphic Design'),
+(7, 'Brand Identity', 'Complete branding package', 350.00, true, '2023-02-07 15:00:00+00', 'Graphic Design'),
+(7, 'Business Cards', 'Custom business card design', 100.00, true, '2023-02-08 16:00:00+00', 'Graphic Design'),
+(7, 'Social Media Kit', 'Social media templates', 200.00, true, '2023-02-09 17:00:00+00', 'Graphic Design'),
+(7, 'Packaging Design', 'Product packaging design', 300.00, true, '2023-02-10 18:00:00+00', 'Graphic Design'),
 
--- Continue with the same pattern for other freelancers...
--- Freelancer 8 (Mike Writer)
-(8, 'Blog Article', '1000-word blog post', 80.00, true, '2023-02-11 19:00:00+00'),
-(8, 'Website Copy', 'Professional website content', 120.00, true, '2023-02-12 20:00:00+00'),
-(8, 'Product Description', 'E-commerce product text', 50.00, true, '2023-02-13 21:00:00+00'),
-(8, 'Press Release', 'Company announcement', 150.00, true, '2023-02-14 22:00:00+00'),
-(8, 'Editing Service', 'Content editing/proofreading', 70.00, true, '2023-02-15 23:00:00+00'),
+-- Freelancer 8 (Mike Writer) - Content Writing
+(8, 'Blog Article', '1000-word blog post', 80.00, true, '2023-02-11 19:00:00+00', 'Content Writing'),
+(8, 'Website Copy', 'Professional website content', 120.00, true, '2023-02-12 20:00:00+00', 'Content Writing'),
+(8, 'Product Description', 'E-commerce product text', 50.00, true, '2023-02-13 21:00:00+00', 'Content Writing'),
+(8, 'Press Release', 'Company announcement', 150.00, true, '2023-02-14 22:00:00+00', 'Content Writing'),
+(8, 'Editing Service', 'Content editing/proofreading', 70.00, true, '2023-02-15 23:00:00+00', 'Content Writing'),
 
--- Freelancer 9 (Emma Marketer)
-(9, 'SEO Audit', 'Website SEO analysis', 200.00, true, '2023-02-16 08:00:00+00'),
-(9, 'Google Ads Setup', 'PPC campaign creation', 250.00, true, '2023-02-17 09:00:00+00'),
-(9, 'Social Media Strategy', '3-month content plan', 300.00, true, '2023-02-18 10:00:00+00'),
-(9, 'Email Campaign', 'Marketing email creation', 180.00, true, '2023-02-19 11:00:00+00'),
-(9, 'Market Research', 'Competitor analysis', 220.00, true, '2023-02-20 12:00:00+00'),
+-- Freelancer 9 (Emma Marketer) - Digital Marketing
+(9, 'SEO Audit', 'Website SEO analysis', 200.00, true, '2023-02-16 08:00:00+00', 'Digital Marketing'),
+(9, 'Google Ads Setup', 'PPC campaign creation', 250.00, true, '2023-02-17 09:00:00+00', 'Digital Marketing'),
+(9, 'Social Media Strategy', '3-month content plan', 300.00, true, '2023-02-18 10:00:00+00', 'Digital Marketing'),
+(9, 'Email Campaign', 'Marketing email creation', 180.00, true, '2023-02-19 11:00:00+00', 'Digital Marketing'),
+(9, 'Market Research', 'Competitor analysis', 220.00, true, '2023-02-20 12:00:00+00', 'Digital Marketing'),
 
--- Freelancer 10 (David Consultant)
-(10, 'Business Plan', 'Startup business plan', 400.00, true, '2023-02-21 13:00:00+00'),
-(10, 'Financial Model', 'Revenue projections', 350.00, true, '2023-02-22 14:00:00+00'),
-(10, '1-hour Consultation', 'Business advice session', 100.00, true, '2023-02-23 15:00:00+00'),
-(10, 'Pitch Deck', 'Investor presentation', 300.00, true, '2023-02-24 16:00:00+00'),
-(10, 'SWOT Analysis', 'Business evaluation', 200.00, true, '2023-02-25 17:00:00+00'),
+-- Freelancer 10 (David Consultant) - Business Consulting
+(10, 'Business Plan', 'Startup business plan', 400.00, true, '2023-02-21 13:00:00+00', 'Business Consulting'),
+(10, 'Financial Model', 'Revenue projections', 350.00, true, '2023-02-22 14:00:00+00', 'Business Consulting'),
+(10, '1-hour Consultation', 'Business advice session', 100.00, true, '2023-02-23 15:00:00+00', 'Business Consulting'),
+(10, 'Pitch Deck', 'Investor presentation', 300.00, true, '2023-02-24 16:00:00+00', 'Business Consulting'),
+(10, 'SWOT Analysis', 'Business evaluation', 200.00, true, '2023-02-25 17:00:00+00', 'Business Consulting'),
 
--- Freelancer 11 (Lisa Tutor)
-(11, 'Math Tutoring', '1-hour math lesson', 40.00, true, '2023-02-26 18:00:00+00'),
-(11, 'English Tutoring', '1-hour English lesson', 40.00, true, '2023-02-27 19:00:00+00'),
-(11, 'Test Preparation', 'SAT/ACT prep session', 60.00, true, '2023-02-28 20:00:00+00'),
-(11, 'College Counseling', 'Application guidance', 80.00, true, '2023-03-01 21:00:00+00'),
-(11, 'Language Tutoring', 'Spanish/French lesson', 45.00, true, '2023-03-02 22:00:00+00'),
+-- Freelancer 11 (Lisa Tutor) - Education
+(11, 'Math Tutoring', '1-hour math lesson', 40.00, true, '2023-02-26 18:00:00+00', 'Education'),
+(11, 'English Tutoring', '1-hour English lesson', 40.00, true, '2023-02-27 19:00:00+00', 'Education'),
+(11, 'Test Preparation', 'SAT/ACT prep session', 60.00, true, '2023-02-28 20:00:00+00', 'Education'),
+(11, 'College Counseling', 'Application guidance', 80.00, true, '2023-03-01 21:00:00+00', 'Education'),
+(11, 'Language Tutoring', 'Spanish/French lesson', 45.00, true, '2023-03-02 22:00:00+00', 'Education'),
 
--- Freelancer 12 (James Photographer)
-(12, 'Portrait Session', '1-hour photo shoot', 150.00, true, '2023-03-03 23:00:00+00'),
-(12, 'Product Photography', 'E-commerce images', 120.00, true, '2023-03-04 08:00:00+00'),
-(12, 'Event Coverage', '3-hour event photography', 300.00, true, '2023-03-05 09:00:00+00'),
-(12, 'Photo Editing', 'Image retouching', 50.00, true, '2023-03-06 10:00:00+00'),
-(12, 'Real Estate Photos', 'Property photography', 180.00, true, '2023-03-07 11:00:00+00'),
+-- Freelancer 12 (James Photographer) - Photography
+(12, 'Portrait Session', '1-hour photo shoot', 150.00, true, '2023-03-03 23:00:00+00', 'Photography'),
+(12, 'Product Photography', 'E-commerce images', 120.00, true, '2023-03-04 08:00:00+00', 'Photography'),
+(12, 'Event Coverage', '3-hour event photography', 300.00, true, '2023-03-05 09:00:00+00', 'Photography'),
+(12, 'Photo Editing', 'Image retouching', 50.00, true, '2023-03-06 10:00:00+00', 'Photography'),
+(12, 'Real Estate Photos', 'Property photography', 180.00, true, '2023-03-07 11:00:00+00', 'Photography'),
 
--- Freelancer 13 (Olivia Editor)
-(13, 'Video Editing', '1-minute edited video', 75.00, true, '2023-03-08 12:00:00+00'),
-(13, 'Podcast Editing', '30-minute episode', 60.00, true, '2023-03-09 13:00:00+00'),
-(13, 'Color Correction', 'Video color grading', 90.00, true, '2023-03-10 14:00:00+00'),
-(13, 'Audio Cleanup', 'Noise removal', 40.00, true, '2023-03-11 15:00:00+00'),
-(13, 'Motion Graphics', 'Animated titles', 120.00, true, '2023-03-12 16:00:00+00'),
+-- Freelancer 13 (Olivia Editor) - Video Production
+(13, 'Video Editing', '1-minute edited video', 75.00, true, '2023-03-08 12:00:00+00', 'Video Production'),
+(13, 'Podcast Editing', '30-minute episode', 60.00, true, '2023-03-09 13:00:00+00', 'Video Production'),
+(13, 'Color Correction', 'Video color grading', 90.00, true, '2023-03-10 14:00:00+00', 'Video Production'),
+(13, 'Audio Cleanup', 'Noise removal', 40.00, true, '2023-03-11 15:00:00+00', 'Video Production'),
+(13, 'Motion Graphics', 'Animated titles', 120.00, true, '2023-03-12 16:00:00+00', 'Video Production'),
 
--- Freelancer 14 (Daniel Translator)
-(14, 'Document Translation', 'Per 1000 words', 80.00, true, '2023-03-13 17:00:00+00'),
-(14, 'Website Translation', 'Per page', 50.00, true, '2023-03-14 18:00:00+00'),
-(14, 'Certified Translation', 'Official documents', 100.00, true, '2023-03-15 19:00:00+00'),
-(14, 'Live Interpretation', 'Per hour', 60.00, true, '2023-03-16 20:00:00+00'),
-(14, 'Proofreading', 'Bilingual editing', 45.00, true, '2023-03-17 21:00:00+00'),
+-- Freelancer 14 (Daniel Translator) - Translation
+(14, 'Document Translation', 'Per 1000 words', 80.00, true, '2023-03-13 17:00:00+00', 'Translation'),
+(14, 'Website Translation', 'Per page', 50.00, true, '2023-03-14 18:00:00+00', 'Translation'),
+(14, 'Certified Translation', 'Official documents', 100.00, true, '2023-03-15 19:00:00+00', 'Translation'),
+(14, 'Live Interpretation', 'Per hour', 60.00, true, '2023-03-16 20:00:00+00', 'Translation'),
+(14, 'Proofreading', 'Bilingual editing', 45.00, true, '2023-03-17 21:00:00+00', 'Translation'),
 
--- Freelancer 15 (Sophia Analyst)
-(15, 'Data Analysis', 'Dataset analysis', 150.00, true, '2023-03-18 22:00:00+00'),
-(15, 'Excel Dashboard', 'Interactive reports', 200.00, true, '2023-03-19 23:00:00+00'),
-(15, 'Survey Analysis', 'Research results', 120.00, true, '2023-03-20 08:00:00+00'),
-(15, 'SQL Querying', 'Database extraction', 90.00, true, '2023-03-21 09:00:00+00'),
-(15, 'Data Visualization', 'Charts/graphs', 110.00, true, '2023-03-22 10:00:00+00');
+-- Freelancer 15 (Sophia Analyst) - Data Analysis
+(15, 'Data Analysis', 'Dataset analysis', 150.00, true, '2023-03-18 22:00:00+00', 'Data Analysis'),
+(15, 'Excel Dashboard', 'Interactive reports', 200.00, true, '2023-03-19 23:00:00+00', 'Data Analysis'),
+(15, 'Survey Analysis', 'Research results', 120.00, true, '2023-03-20 08:00:00+00', 'Data Analysis'),
+(15, 'SQL Querying', 'Database extraction', 90.00, true, '2023-03-21 09:00:00+00', 'Data Analysis'),
+(15, 'Data Visualization', 'Charts/graphs', 110.00, true, '2023-03-22 10:00:00+00', 'Data Analysis');
 
 INSERT INTO bookings (client_id, service_id, freelancer_id, status, booked_at, completed_at) VALUES
 -- Client 16 bookings
@@ -176,57 +175,75 @@ INSERT INTO bookings (client_id, service_id, freelancer_id, status, booked_at, c
 (18, 49, 15, 'completed', '2023-05-09 10:00:00+00', '2023-05-11 14:00:00+00'),
 (19, 50, 15, 'completed', '2023-05-10 11:00:00+00', '2023-05-12 15:00:00+00');
 
-INSERT INTO reviews (booking_id, reviewer_id, rating, comment, created_at) VALUES
-(1, 16, 5, 'Excellent website development!', '2023-03-26 16:00:00+00'),
-(2, 16, 4, 'Great logo design, very creative', '2023-03-27 17:00:00+00'),
-(3, 17, 5, 'API integration worked perfectly', '2023-03-28 18:00:00+00'),
-(4, 17, 4, 'Good branding work', '2023-03-29 19:00:00+00'),
-(5, 18, 5, 'Database design was flawless', '2023-03-30 20:00:00+00'),
-(6, 18, 3, 'Business cards were okay', '2023-03-31 21:00:00+00'),
-(7, 19, 4, 'E-commerce site works well', '2023-04-01 22:00:00+00'),
-(8, 19, 5, 'Amazing packaging design', '2023-04-02 23:00:00+00'),
-(9, 20, 3, 'CMS setup took longer than expected', '2023-04-03 08:00:00+00'),
-(10, 20, 4, 'Well-written blog article', '2023-04-04 09:00:00+00'),
-(11, 21, 5, 'Perfect website copy', '2023-04-05 10:00:00+00'),
-(12, 21, 4, 'Great SEO audit', '2023-04-06 11:00:00+00'),
-(13, 22, 3, 'Product descriptions were fine', '2023-04-07 12:00:00+00'),
-(14, 22, 5, 'Google Ads setup was perfect', '2023-04-08 13:00:00+00'),
-(15, 23, 4, 'Good press release', '2023-04-09 14:00:00+00'),
-(16, 23, 5, 'Excellent social media strategy', '2023-04-10 15:00:00+00'),
-(17, 24, 3, 'Editing was decent', '2023-04-11 16:00:00+00'),
-(18, 24, 4, 'Email campaign worked well', '2023-04-12 17:00:00+00'),
-(19, 25, 5, 'Market research was thorough', '2023-04-13 18:00:00+00'),
-(20, 25, 4, 'Business plan was well-written', '2023-04-14 19:00:00+00'),
-(21, 26, 5, 'Financial model was perfect', '2023-04-15 20:00:00+00'),
-(22, 26, 4, 'Great consultation session', '2023-04-16 21:00:00+00'),
-(23, 27, 3, 'Pitch deck was okay', '2023-04-17 22:00:00+00'),
-(24, 27, 5, 'SWOT analysis was excellent', '2023-04-18 23:00:00+00'),
-(25, 28, 4, 'Math tutoring helped a lot', '2023-04-19 08:00:00+00'),
-(26, 28, 5, 'English tutoring was perfect', '2023-04-20 09:00:00+00'),
-(27, 29, 4, 'Test prep was helpful', '2023-04-21 10:00:00+00'),
-(28, 29, 3, 'College counseling was decent', '2023-04-22 11:00:00+00'),
-(29, 30, 5, 'Language tutoring was amazing', '2023-04-23 12:00:00+00'),
-(30, 30, 4, 'Portrait session went well', '2023-04-24 13:00:00+00'),
-(31, 16, 5, 'Product photos were excellent', '2023-04-25 14:00:00+00'),
-(32, 17, 4, 'Event coverage was good', '2023-04-26 15:00:00+00'),
-(33, 18, 3, 'Photo editing was okay', '2023-04-27 16:00:00+00'),
-(34, 19, 5, 'Real estate photos were perfect', '2023-04-28 17:00:00+00'),
-(35, 20, 4, 'Video editing was great', '2023-04-29 18:00:00+00'),
-(36, 21, 5, 'Podcast editing was excellent', '2023-04-30 19:00:00+00'),
-(37, 22, 4, 'Color correction was good', '2023-05-01 20:00:00+00'),
-(38, 23, 3, 'Audio cleanup was decent', '2023-05-02 21:00:00+00'),
-(39, 24, 5, 'Motion graphics were amazing', '2023-05-03 22:00:00+00'),
-(40, 25, 4, 'Document translation was good', '2023-05-04 23:00:00+00'),
-(41, 26, 5, 'Website translation was perfect', '2023-05-05 08:00:00+00'),
-(42, 27, 4, 'Certified translation was great', '2023-05-06 09:00:00+00'),
-(43, 28, 3, 'Live interpretation was okay', '2023-05-07 10:00:00+00'),
-(44, 29, 5, 'Proofreading was excellent', '2023-05-08 11:00:00+00'),
-(45, 30, 4, 'Data analysis was helpful', '2023-05-09 12:00:00+00'),
-(46, 16, 5, 'Excel dashboard was perfect', '2023-05-10 13:00:00+00'),
-(47, 17, 4, 'Survey analysis was good', '2023-05-11 14:00:00+00'),
-(48, 18, 3, 'SQL querying was decent', '2023-05-12 15:00:00+00'),
-(49, 19, 5, 'Data visualization was amazing', '2023-05-13 16:00:00+00');
--- (50, 20, 4, 'Great service overall', '2023-05-14 17:00:00+00');
+INSERT INTO reviews (booking_id, service_id, freelancer_id, reviewer_id, rating, comment, created_at) VALUES
+-- Reviews for Web Development services (Freelancer 6)
+(1, 1, 6, 16, 5, 'Excellent website development!', '2023-03-26 16:00:00+00'),
+(3, 2, 6, 17, 5, 'API integration worked perfectly', '2023-03-28 18:00:00+00'),
+(5, 3, 6, 18, 5, 'Database design was flawless', '2023-03-30 20:00:00+00'),
+(7, 4, 6, 19, 4, 'E-commerce site works well', '2023-04-01 22:00:00+00'),
+(9, 5, 6, 20, 3, 'CMS setup took longer than expected', '2023-04-03 08:00:00+00'),
+
+-- Reviews for Graphic Design services (Freelancer 7)
+(2, 7, 7, 16, 4, 'Great logo design, very creative', '2023-03-27 17:00:00+00'),
+(4, 8, 7, 17, 4, 'Good branding work', '2023-03-29 19:00:00+00'),
+(6, 9, 7, 18, 3, 'Business cards were okay', '2023-03-31 21:00:00+00'),
+(8, 10, 7, 19, 5, 'Amazing packaging design', '2023-04-02 23:00:00+00'),
+
+-- Reviews for Content Writing services (Freelancer 8)
+(10, 11, 8, 20, 4, 'Well-written blog article', '2023-04-04 09:00:00+00'),
+(11, 12, 8, 21, 5, 'Perfect website copy', '2023-04-05 10:00:00+00'),
+(13, 13, 8, 22, 3, 'Product descriptions were fine', '2023-04-07 12:00:00+00'),
+(15, 14, 8, 23, 4, 'Good press release', '2023-04-09 14:00:00+00'),
+(17, 15, 8, 24, 3, 'Editing was decent', '2023-04-11 16:00:00+00'),
+
+-- Reviews for Digital Marketing services (Freelancer 9)
+(12, 17, 9, 21, 4, 'Great SEO audit', '2023-04-06 11:00:00+00'),
+(14, 18, 9, 22, 5, 'Google Ads setup was perfect', '2023-04-08 13:00:00+00'),
+(16, 19, 9, 23, 5, 'Excellent social media strategy', '2023-04-10 15:00:00+00'),
+(18, 20, 9, 24, 4, 'Email campaign worked well', '2023-04-12 17:00:00+00'),
+(19, 16, 9, 25, 5, 'Market research was thorough', '2023-04-13 18:00:00+00'),
+
+-- Reviews for Business Consulting services (Freelancer 10)
+(20, 21, 10, 25, 4, 'Business plan was well-written', '2023-04-14 19:00:00+00'),
+(21, 22, 10, 26, 5, 'Financial model was perfect', '2023-04-15 20:00:00+00'),
+(22, 23, 10, 26, 4, 'Great consultation session', '2023-04-16 21:00:00+00'),
+(23, 24, 10, 27, 3, 'Pitch deck was okay', '2023-04-17 22:00:00+00'),
+(24, 25, 10, 27, 5, 'SWOT analysis was excellent', '2023-04-18 23:00:00+00'),
+
+-- Reviews for Education services (Freelancer 11)
+(25, 26, 11, 28, 4, 'Math tutoring helped a lot', '2023-04-19 08:00:00+00'),
+(26, 27, 11, 28, 5, 'English tutoring was perfect', '2023-04-20 09:00:00+00'),
+(27, 28, 11, 29, 4, 'Test prep was helpful', '2023-04-21 10:00:00+00'),
+(28, 29, 11, 29, 3, 'College counseling was decent', '2023-04-22 11:00:00+00'),
+(29, 30, 11, 30, 5, 'Language tutoring was amazing', '2023-04-23 12:00:00+00'),
+
+-- Reviews for Photography services (Freelancer 12)
+(30, 31, 12, 30, 4, 'Portrait session went well', '2023-04-24 13:00:00+00'),
+(31, 32, 12, 16, 5, 'Product photos were excellent', '2023-04-25 14:00:00+00'),
+(32, 33, 12, 17, 4, 'Event coverage was good', '2023-04-26 15:00:00+00'),
+(33, 34, 12, 18, 3, 'Photo editing was okay', '2023-04-27 16:00:00+00'),
+(34, 35, 12, 19, 5, 'Real estate photos were perfect', '2023-04-28 17:00:00+00'),
+
+-- Reviews for Video Production services (Freelancer 13)
+(35, 36, 13, 20, 4, 'Video editing was great', '2023-04-29 18:00:00+00'),
+(36, 37, 13, 21, 5, 'Podcast editing was excellent', '2023-04-30 19:00:00+00'),
+(37, 38, 13, 22, 4, 'Color correction was good', '2023-05-01 20:00:00+00'),
+(38, 39, 13, 23, 3, 'Audio cleanup was decent', '2023-05-02 21:00:00+00'),
+(39, 40, 13, 24, 5, 'Motion graphics were amazing', '2023-05-03 22:00:00+00'),
+
+-- Reviews for Translation services (Freelancer 14)
+(40, 41, 14, 25, 4, 'Document translation was good', '2023-05-04 23:00:00+00'),
+(41, 42, 14, 26, 5, 'Website translation was perfect', '2023-05-05 08:00:00+00'),
+(42, 43, 14, 27, 4, 'Certified translation was great', '2023-05-06 09:00:00+00'),
+(43, 44, 14, 28, 3, 'Live interpretation was okay', '2023-05-07 10:00:00+00'),
+(44, 45, 14, 29, 5, 'Proofreading was excellent', '2023-05-08 11:00:00+00'),
+
+-- Reviews for Data Analysis services (Freelancer 15)
+(45, 46, 15, 30, 4, 'Data analysis was helpful', '2023-05-09 12:00:00+00'),
+(46, 47, 15, 16, 5, 'Excel dashboard was perfect', '2023-05-10 13:00:00+00'),
+(47, 48, 15, 17, 4, 'Survey analysis was good', '2023-05-11 14:00:00+00'),
+(48, 49, 15, 18, 3, 'SQL querying was decent', '2023-05-12 15:00:00+00'),
+(49, 50, 15, 19, 5, 'Data visualization was amazing', '2023-05-13 16:00:00+00');
 
 INSERT INTO messages (sender_id, receiver_id, booking_id, content, sent_at, is_read) VALUES
 (16, 6, 1, 'Hi, I need a website for my business', '2023-03-23 11:05:00+00', true),

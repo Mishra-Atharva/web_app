@@ -15,9 +15,17 @@ public class Reviews {
     @Column(name = "id")
     private Integer id;
 
+    @Column(name = "service_id")
+    @JsonProperty("service_id")
+    private int serviceId;
+
     @Column(name = "booking_id")
     @JsonProperty("booking_id")
     private int booking_id;
+
+    @Column(name = "freelancer_id")
+    @JsonProperty("freelancer_id")
+    private int freelancer_id;
 
     @Column(name = "reviewer_id")
     @JsonProperty("reviewer_id")

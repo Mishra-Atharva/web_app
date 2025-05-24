@@ -41,8 +41,6 @@ function Review() {
       <NavigationBar />
 
       <div style={{ display: "flex", flex: 1 }}>
-        <SideBar />
-
         <main
           style={{
             flex: 1,

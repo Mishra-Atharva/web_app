@@ -3,11 +3,11 @@ package com.rushlance.backend.controller;
 import com.rushlance.backend.model.Reviews;
 import com.rushlance.backend.repo.ReviewRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin
@@ -19,5 +19,11 @@ public class ReviewController {
     @GetMapping("/reviews")
     public List<Reviews> getAllReviews() {
         return this.reviewRepo.getAll();
+    }
+
+    @PostMapping("/reviewID")
+    public List<Reviews> getReviewsById(@RequestBody Map<String, Object> id) {
+        Integer reviewID = (Integer) id.get("id");
+        return this.reviewRepo.getReviewsById(reviewID);
     }
 }

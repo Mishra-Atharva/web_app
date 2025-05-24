@@ -2,9 +2,9 @@ package com.rushlance.backend.model;
 
 public class BookingDetails
 {
-    Booking booking;
+    Bookings booking;
 
-    public BookingDetails(Booking booking)
+    public BookingDetails(Bookings booking)
     {
         this.booking = booking;
     }

@@ -13,6 +13,7 @@ CREATE TABLE users (
 CREATE TABLE services (
     id SERIAL PRIMARY KEY,
     freelancer_id INTEGER NOT NULL,
+    category TEXT NOT NULL,
     title VARCHAR(100) NOT NULL,
     description TEXT,
     price DECIMAL(10,2) NOT NULL,
@@ -35,12 +36,16 @@ CREATE TABLE bookings (
 
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
-    booking_id INTEGER NOT NULL,
+    service_id INTEGER NOT NULL,
+    booking_id INTEGER NOT NULL UNIQUE,
+    freelancer_id INTEGER NOT NULL,
     reviewer_id INTEGER NOT NULL,
     rating INTEGER NOT NULL CHECK (rating BETWEEN 1 AND 5),
     comment TEXT,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (service_id) REFERENCES services(id) ON DELETE CASCADE,
     FOREIGN KEY (booking_id) REFERENCES bookings(id) ON DELETE CASCADE,
+    FOREIGN KEY (freelancer_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (reviewer_id) REFERENCES users(id) ON DELETE CASCADE
 );
 

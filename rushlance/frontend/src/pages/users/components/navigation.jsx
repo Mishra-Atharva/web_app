@@ -8,11 +8,7 @@ function NavigationBar() {
    const navigate = useNavigate();
 
     const handleNavigation = (path) => {
-        navigate(path, {
-            state: {
-                detail: ""
-            }
-        });
+        navigate(path);
     };
 
   return (

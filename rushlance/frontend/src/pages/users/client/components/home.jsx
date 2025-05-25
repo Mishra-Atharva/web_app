@@ -1,5 +1,35 @@
+import {useState, useEffect} from "react";
+import {countData} from "../utils/bookingcount.js"
+
 //  client “Dashboard”
 export default function ClientHome({ profile = {} }) {
+
+  const [count, setCount] = useState({});
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const data = await countData();
+        if (data) {
+          try {
+            const parsedData = typeof data === 'string' ? JSON.parse(data) : data;
+            console.log(parsedData);
+            setCount(parsedData);
+          } catch (parseError) {
+            console.error("Error parsing user data:", parseError);
+            setError("Failed to parse user data");
+          }
+        }
+      } catch (err) {
+        console.error("Error fetching user data:", err);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  console.log(count);
+
   const { fullName = "Client", email = "email@example.com" } = profile;
 
   return (
@@ -8,9 +38,9 @@ export default function ClientHome({ profile = {} }) {
       <p className="text-gray-600 mb-6">{email}</p>
 
       <div className="grid sm:grid-cols-3 gap-4">
-        <Card label="Total Bookings" value="8" />
-        <Card label="Pending"        value="3" />
-        <Card label="Completed"      value="5" />
+        <Card label="Total Bookings" value={count.total_bookings} />
+        <Card label="Pending"        value={count.pending_bookings} />
+        <Card label="Completed"      value={count.completed_bookings} />
       </div>
     </section>
   );

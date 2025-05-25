@@ -1,8 +1,15 @@
 /*  src/pages/components/navigation.jsx  */
+import { useNavigate } from "react-router-dom";
 
 function NavigationBar() {
   const style = { gridArea: "header" };
   const linkStyle = { cursor: "pointer", padding: "20px" };
+
+   const navigate = useNavigate();
+
+    const handleNavigation = (path) => {
+        navigate(path);
+    };
 
   return (
     <nav
@@ -14,7 +21,11 @@ function NavigationBar() {
 
       {/* just “Home” per spec */}
       <ul className="flex gap-6 font-medium">
-        <li style={linkStyle}>Home</li>
+        <li style={linkStyle} onClick={() => handleNavigation("/")}>Home</li>
+        <li style={linkStyle} onClick={() => handleNavigation("/dashboard_client")}>Dashboard - Client</li>
+        <li style={linkStyle} onClick={() => handleNavigation("/dashboard_freelancer")}>Dashboard - Freelancer</li>
+        <li style={linkStyle} onClick={() => handleNavigation("/dashboard_admin")}>Dashboard - Admin</li>
+        <li style={linkStyle} onClick={() => handleNavigation("/signup")}>Signup/Login</li>
       </ul>
 
       {/* Location selector with a plain ▼ glyph instead of an image */}

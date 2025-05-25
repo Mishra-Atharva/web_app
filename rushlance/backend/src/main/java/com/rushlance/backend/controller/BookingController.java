@@ -48,7 +48,7 @@ public class BookingController {
     }
 
     @PostMapping("/totalBookings")
-    public List<Bookings> getTotalBooking(@RequestBody Map<String, Object> email)
+    public List<Map<String, Object>> getTotalBooking(@RequestBody Map<String, Object> email)
     {
         String email_str = (String) email.get("email");
         System.out.println(email_str);

@@ -44,7 +44,7 @@ const ICONS_CLIENT = {
   Payment:    iconClient("$"),
   Bookings:   iconClient("BK"),
   Settings:   iconClient("ST"),
-  chat:       iconClient("CH"),
+  Chat:       iconClient("CH"),
   Help:       iconClient("?"),
   SignOut:    iconClient("S")
 };
@@ -59,7 +59,7 @@ function SideBar({ currentLink, userType = "client" }) {
   /* link sets */
   const clientLinks = [
     "Dashboard", "Account", "Payment", "Bookings",
-    "Settings","chat", "Help", "SignOut"
+    "Settings","Chat", "Help", "SignOut"
   ];
   const freelancerLinks = [
     "Dashboard", "Profile", "Services", "Projects",

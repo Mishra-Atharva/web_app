@@ -15,6 +15,11 @@ public class NotificationController {
     @Autowired
     NotificationRepo notificationRepo;
 
+    @PostMapping("/notifications")
+    public Notifications addNotification(@RequestBody Notifications notifications) {
+        return notificationRepo.save(notifications);
+    }
+
     @GetMapping("/notifications")
     public List<Notifications> getAllNotifications()
     {

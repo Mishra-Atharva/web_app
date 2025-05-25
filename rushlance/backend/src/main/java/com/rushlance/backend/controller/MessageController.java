@@ -15,6 +15,11 @@ public class MessageController {
     @Autowired
     private MessageRepo messageRepo;
 
+    @PostMapping("/messages")
+    public Messages addMessage(@RequestBody Messages messages) {
+        return messageRepo.save(messages);
+    }
+
     @GetMapping("/messages")
     public List<Messages> getAllMessages()
     {

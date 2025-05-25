@@ -16,6 +16,11 @@ public class ReviewController {
     @Autowired
     private ReviewRepo reviewRepo;
 
+    @PostMapping("/reviews")
+    public Reviews addReview(@RequestBody Reviews reviews) {
+        return reviewRepo.save(reviews);
+    }
+
     @GetMapping("/reviews")
     public List<Reviews> getAllReviews() {
         return this.reviewRepo.getAll();

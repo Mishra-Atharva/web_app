@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function ClientChat() {
   const [msg, setMsg]   = useState("");
   const [log, setLog]   = useState([
-    { me: false, text: "Hi! How can we help?" }
+    { me: false, text: "Hi! How are you?" }
   ]);
 
   const send = e => {
@@ -18,7 +18,7 @@ export default function ClientChat() {
 
   return (
     <section className="rounded-2xl border border-gray-200 p-6 bg-white flex flex-col h-[calc(100vh-200px)] max-w-[600px]">
-      <h2 className="text-xl font-semibold mb-4">Chat support</h2>
+      <h2 className="text-xl font-semibold mb-4">Chat</h2>
 
       <div className="flex-1 overflow-y-auto space-y-4 pr-2">
         {log.map((m, i) => (

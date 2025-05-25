@@ -25,6 +25,7 @@ function NavigationBar() {
         <li style={linkStyle} onClick={() => handleNavigation("/dashboard_client")}>Dashboard - Client</li>
         <li style={linkStyle} onClick={() => handleNavigation("/dashboard_freelancer")}>Dashboard - Freelancer</li>
         <li style={linkStyle} onClick={() => handleNavigation("/dashboard_admin")}>Dashboard - Admin</li>
+        <li style={linkStyle} onClick={() => handleNavigation("/signup")}>Signup/Login</li>
       </ul>
 
       {/* Location selector with a plain ▼ glyph instead of an image */}

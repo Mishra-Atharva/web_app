@@ -51,7 +51,13 @@ public class BookingController {
     public List<Map<String, Object>> getTotalBooking(@RequestBody Map<String, Object> email)
     {
         String email_str = (String) email.get("email");
-        System.out.println(email_str);
         return this.bookingRepo.totalBookings(email_str);
+    }
+
+    @PostMapping("/countBookings")
+    public Map<String, Object> getCountBooking(@RequestBody Map<String, Object> email)
+    {
+        String email_str = (String) email.get("email");
+        return this.bookingRepo.getCountBookings(email_str);
     }
 }

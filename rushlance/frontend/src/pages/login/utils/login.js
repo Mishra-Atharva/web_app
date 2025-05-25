@@ -1,5 +1,6 @@
 // Importing
 import { fetchData } from "../../../utils/fetch.js";
+import { userType } from "./usertype.js";
 
 // Handles user login
 export async function login(email, password)
@@ -12,6 +13,7 @@ export async function login(email, password)
     {
         localStorage.setItem("email", email);
         localStorage.setItem("token", result);
+        userType(email, result);
         return true;
     }
     else 

@@ -25,8 +25,15 @@ public class MainController {
     public Users getUserDetailsByEmail(@RequestBody Map<String, Object> email)
     {
         String email_str = (String) email.get("email");
-        System.out.println(email_str);
         return this.userRepo.findByEmail(email_str);
+    }
+
+    @PostMapping("/user-email")
+    public String getUserType(@RequestBody Map<String, Object> email)
+    {
+        String email_str = (String) email.get("email");
+        Users user = this.userRepo.findByEmail(email_str);
+        return user.getUser_type();
     }
 
     @PostMapping("/userID")

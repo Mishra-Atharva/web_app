@@ -23,4 +23,7 @@ public interface BookingRepo extends JpaRepository<Bookings, Long>
 
     @Query(value = "UPDATE BOOKINGS SET status = :status, completed_at = :date WHERE id = :id;", nativeQuery = true)
     Boolean updateBookings(@Param("id") Integer id, @Param("status") String status, @Param("date") LocalDate completed_at);
+
+    @Query(value = "SELECT COUNT(*) AS total_bookings, COUNT(CASE WHEN b.status = 'pending' THEN 1 END) AS pending_bookings, COUNT(CASE WHEN b.status = 'completed' THEN 1 END) AS completed_bookings FROM BOOKINGS b JOIN USERS u ON b.client_id = u.id WHERE u.email = :email;", nativeQuery = true)
+    Map<String, Object> getCountBookings(@Param("email") String email);
 }
